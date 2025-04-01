@@ -11,6 +11,38 @@ export default defineType({
       type: 'number',
       validation: (Rule) => Rule.required(),
     }),
+    defineField(
+      {
+        title: 'Titel',
+        name: 'title',
+        type: 'reference',
+        to: [{ type: 'title' }],
+        validation: (Rule) => Rule.required(),
+      }
+    ),
+    defineField(
+      {
+        title: 'Kapitel',
+        name: 'chapter',
+        type: 'reference',
+        to: [{ type: 'chapter' }],
+        options: {
+          filter: ({ document }) => {
+            // @ts-expect-error
+            if (!document?.title?._ref) {
+              return {
+                filter: '_id == ""', // No chapters will be shown if no title is selected
+              };
+            }
+            return {
+              filter: 'title._ref == $titleId',
+              // @ts-expect-error
+              params: { titleId: document.title._ref },
+            };
+          },
+        },
+      }
+    ),
     defineField({
       name: 'name',
       title: 'Name',
@@ -20,12 +52,14 @@ export default defineType({
   ],
   preview: {
     select: {
-      title: 'name.de',
+      name: 'name.de',
       number: 'number',
+      titleNum: 'title.number',
+      chapterNum: 'chapter.number'
     },
     prepare(selection) {
-      const { title, number } = selection
-      return { title: `Abschnitt ${number} ${title}` }
+      const { name, number, titleNum, chapterNum } = selection
+      return { title: `Abschnitt ${number} ${name}`, subtitle: `Titel ${titleNum}; Kapitel ${chapterNum}` }
     },
   },
   orderings: [

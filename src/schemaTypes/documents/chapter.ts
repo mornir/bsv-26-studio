@@ -32,12 +32,11 @@ export default defineType({
     select: {
       name: 'name.de',
       number: 'number',
-      title: 'title.name.de',
       titleNum: 'title.number'
     },
     prepare(selection) {
-      const { name, number, title, titleNum } = selection
-      return { title: `Kapitel ${number} ${name}`, subtitle: `Titel ${titleNum} ${title}` }
+      const { name, number, titleNum } = selection
+      return { title: `Kapitel ${number} ${name}`, subtitle: `Titel ${titleNum}` }
     },
   },
   orderings: [

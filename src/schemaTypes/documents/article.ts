@@ -17,6 +17,44 @@ export const article = defineType({
       type: 'number',
       validation: (Rule) => Rule.required(),
     }),
+    defineField(
+      {
+        title: 'Titel',
+        name: 'title',
+        type: 'reference',
+        to: [{ type: 'title' }],
+        validation: (Rule) => Rule.required(),
+      }
+    ),
+    defineField(
+      {
+        title: 'Kapitel',
+        name: 'chapter',
+        type: 'reference',
+        to: [{ type: 'chapter' }],
+        options: {
+          filter: ({ document }) => {
+            if (!document?.title?._ref) {
+              return {
+                filter: '_id == ""', // No chapters will be shown if no title is selected
+              };
+            }
+            return {
+              filter: 'title._ref == $titleId',
+              params: { titleId: document.title._ref },
+            };
+          },
+        },
+      }
+    ),
+    defineField(
+      {
+        title: 'Abschnitt',
+        name: 'section',
+        type: 'reference',
+        to: [{ type: 'section' }]
+      }
+    ),
     defineField({
       name: 'content',
       type: 'object',
@@ -70,4 +108,13 @@ export const article = defineType({
       return { title: `Art.${number} ${title}` }
     },
   },
+  orderings: [
+    {
+      title: 'Nummer',
+      name: 'number',
+      by: [
+        { field: 'number', direction: 'asc' }
+      ]
+    },
+  ]
 })

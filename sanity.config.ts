@@ -2,6 +2,7 @@ import { defineConfig } from 'sanity'
 import { structureTool } from 'sanity/structure'
 import { visionTool } from '@sanity/vision'
 import { schemaTypes } from './src/schemaTypes'
+import { structure } from './structure'
 
 import { table } from '@sanity/table';
 
@@ -15,6 +16,7 @@ export default defineConfig({
   title: 'BSV 2026',
   projectId,
   dataset,
+  tasks: { enabled: false },
   document: {
     comments: {
       enabled: false,

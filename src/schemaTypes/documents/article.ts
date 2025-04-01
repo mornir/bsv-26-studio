@@ -64,9 +64,9 @@ export const article = defineType({
               };
             }
             return {
-              filter: 'title._ref == $titleId',
+              filter: 'title._ref == $titleId && chapter._ref == $chapterId',
               // @ts-expect-error
-              params: { titleId: document.title._ref },
+              params: { titleId: document.title._ref, chapterId: document.chapter._ref },
             };
           },
         },

@@ -131,29 +131,24 @@ export type SanityAssetSourceData = {
   url?: string
 }
 
-export type BlockContent = Array<
-  | {
-      children?: Array<{
-        marks?: Array<string>
-        text?: string
-        _type: 'span'
-        _key: string
-      }>
-      style?: 'normal' | 'h1' | 'h2' | 'h3' | 'h4' | 'blockquote'
-      listItem?: 'number' | 'bullet'
-      markDefs?: Array<{
-        href?: string
-        _type: 'link'
-        _key: string
-      }>
-      level?: number
-      _type: 'block'
-      _key: string
-    }
-  | ({
-      _key: string
-    } & Table)
->
+export type BlockContent = Array<{
+  children?: Array<{
+    marks?: Array<string>
+    text?: string
+    _type: 'span'
+    _key: string
+  }>
+  style?: 'normal'
+  listItem?: 'number' | 'bullet'
+  markDefs?: Array<{
+    href?: string
+    _type: 'link'
+    _key: string
+  }>
+  level?: number
+  _type: 'block'
+  _key: string
+}>
 
 export type Article = {
   _id: string
@@ -162,31 +157,224 @@ export type Article = {
   _updatedAt: string
   _rev: string
   number?: number
-  content?: {
-    deTitle?: string
-    frTitle?: string
-    itTitle?: string
-    deLaw?: BlockContent
-    frLaw?: BlockContent
-    itLaw?: BlockContent
-    deExplanation?: BlockContent
-    frExplanation?: BlockContent
-    itExplanation?: BlockContent
+  title?: {
+    _ref: string
+    _type: 'reference'
+    _weak?: boolean
+    [internalGroqTypeReferenceTo]?: 'title'
   }
+  chapter?: {
+    _ref: string
+    _type: 'reference'
+    _weak?: boolean
+    [internalGroqTypeReferenceTo]?: 'chapter'
+  }
+  section?: {
+    _ref: string
+    _type: 'reference'
+    _weak?: boolean
+    [internalGroqTypeReferenceTo]?: 'section'
+  }
+  name?: LocaleString
+  law?: LocaleBlockContent
+  exp?: LocaleBlockContent
 }
 
-export type Table = {
-  _type: 'table'
-  rows?: Array<
+export type LocaleBlockContent = {
+  _type: 'localeBlockContent'
+  de?: BlockContent
+  fr?: BlockContent
+  it?: BlockContent
+}
+
+export type Section = {
+  _id: string
+  _type: 'section'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  number?: number
+  title?: {
+    _ref: string
+    _type: 'reference'
+    _weak?: boolean
+    [internalGroqTypeReferenceTo]?: 'title'
+  }
+  chapter?: {
+    _ref: string
+    _type: 'reference'
+    _weak?: boolean
+    [internalGroqTypeReferenceTo]?: 'chapter'
+  }
+  name?: LocaleString
+}
+
+export type Chapter = {
+  _id: string
+  _type: 'chapter'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  number?: number
+  title?: {
+    _ref: string
+    _type: 'reference'
+    _weak?: boolean
+    [internalGroqTypeReferenceTo]?: 'title'
+  }
+  name?: LocaleString
+}
+
+export type Title = {
+  _id: string
+  _type: 'title'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  number?: number
+  name?: LocaleString
+}
+
+export type LocaleString = {
+  _type: 'localeString'
+  de?: string
+  fr?: string
+  it?: string
+}
+
+export type SanityAssistInstructionTask = {
+  _type: 'sanity.assist.instructionTask'
+  path?: string
+  instructionKey?: string
+  started?: string
+  updated?: string
+  info?: string
+}
+
+export type SanityAssistTaskStatus = {
+  _type: 'sanity.assist.task.status'
+  tasks?: Array<
     {
       _key: string
-    } & TableRow
+    } & SanityAssistInstructionTask
   >
 }
 
-export type TableRow = {
-  _type: 'tableRow'
-  cells?: Array<string>
+export type SanityAssistSchemaTypeAnnotations = {
+  _type: 'sanity.assist.schemaType.annotations'
+  title?: string
+  fields?: Array<
+    {
+      _key: string
+    } & SanityAssistSchemaTypeField
+  >
+}
+
+export type SanityAssistOutputType = {
+  _type: 'sanity.assist.output.type'
+  type?: string
+}
+
+export type SanityAssistOutputField = {
+  _type: 'sanity.assist.output.field'
+  path?: string
+}
+
+export type SanityAssistInstructionContext = {
+  _type: 'sanity.assist.instruction.context'
+  reference?: {
+    _ref: string
+    _type: 'reference'
+    _weak?: boolean
+    [internalGroqTypeReferenceTo]?: 'assist.instruction.context'
+  }
+}
+
+export type AssistInstructionContext = {
+  _id: string
+  _type: 'assist.instruction.context'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  title?: string
+  context?: Array<{
+    children?: Array<{
+      marks?: Array<string>
+      text?: string
+      _type: 'span'
+      _key: string
+    }>
+    style?: 'normal'
+    listItem?: never
+    markDefs?: null
+    level?: number
+    _type: 'block'
+    _key: string
+  }>
+}
+
+export type SanityAssistInstructionUserInput = {
+  _type: 'sanity.assist.instruction.userInput'
+  message?: string
+  description?: string
+}
+
+export type SanityAssistInstructionPrompt = Array<{
+  children?: Array<
+    | {
+        marks?: Array<string>
+        text?: string
+        _type: 'span'
+        _key: string
+      }
+    | ({
+        _key: string
+      } & SanityAssistInstructionFieldRef)
+    | ({
+        _key: string
+      } & SanityAssistInstructionContext)
+    | ({
+        _key: string
+      } & SanityAssistInstructionUserInput)
+  >
+  style?: 'normal'
+  listItem?: never
+  markDefs?: null
+  level?: number
+  _type: 'block'
+  _key: string
+}>
+
+export type SanityAssistInstructionFieldRef = {
+  _type: 'sanity.assist.instruction.fieldRef'
+  path?: string
+}
+
+export type SanityAssistInstruction = {
+  _type: 'sanity.assist.instruction'
+  prompt?: SanityAssistInstructionPrompt
+  icon?: string
+  title?: string
+  userId?: string
+  createdById?: string
+  output?: Array<
+    | ({
+        _key: string
+      } & SanityAssistOutputField)
+    | ({
+        _key: string
+      } & SanityAssistOutputType)
+  >
+}
+
+export type SanityAssistSchemaTypeField = {
+  _type: 'sanity.assist.schemaType.field'
+  path?: string
+  instructions?: Array<
+    {
+      _key: string
+    } & SanityAssistInstruction
+  >
 }
 
 export type AllSanitySchemaTypes =
@@ -203,6 +391,21 @@ export type AllSanitySchemaTypes =
   | SanityAssetSourceData
   | BlockContent
   | Article
-  | Table
-  | TableRow
+  | LocaleBlockContent
+  | Section
+  | Chapter
+  | Title
+  | LocaleString
+  | SanityAssistInstructionTask
+  | SanityAssistTaskStatus
+  | SanityAssistSchemaTypeAnnotations
+  | SanityAssistOutputType
+  | SanityAssistOutputField
+  | SanityAssistInstructionContext
+  | AssistInstructionContext
+  | SanityAssistInstructionUserInput
+  | SanityAssistInstructionPrompt
+  | SanityAssistInstructionFieldRef
+  | SanityAssistInstruction
+  | SanityAssistSchemaTypeField
 export declare const internalGroqTypeReferenceTo: unique symbol

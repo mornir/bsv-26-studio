@@ -3,6 +3,7 @@ import { structureTool } from 'sanity/structure'
 import { visionTool } from '@sanity/vision'
 import { schemaTypes } from './src/schemaTypes'
 import { structure } from './structure'
+import { assist } from '@sanity/assist'
 import { languageFilter } from '@sanity/language-filter'
 
 // Environment variables for project configuration
@@ -29,6 +30,18 @@ export default defineConfig({
     ],
     defaultLanguages: ['de'],
     documentTypes: ['article'],
+  }),
+  assist({
+    translate: {
+      field: {
+        documentTypes: ['article'],
+        languages: [
+          { id: 'de', title: 'Deutsch' },
+          { id: 'fr', title: 'Französisch' },
+          { id: 'it', title: 'Italienisch' }
+        ],
+      },
+    },
   })],
   schema: {
     types: schemaTypes,

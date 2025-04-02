@@ -113,12 +113,12 @@ export const article = defineType({
   ],
   preview: {
     select: {
-      title: 'content.deTitle',
+      name: 'name.de',
       number: 'number',
     },
     prepare(selection) {
-      const { title, number } = selection
-      return { title: `Art.${number} ${title}` }
+      const { name, number } = selection
+      return { title: `Art.${number} ${name}` }
     },
   },
   orderings: [

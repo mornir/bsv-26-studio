@@ -10,12 +10,28 @@ export const article = defineType({
   name: 'article',
   title: 'Artikel',
   type: 'document',
+  groups: [
+    {
+      name: 'categorization',
+      title: 'Kategorisierung',
+    },
+    {
+      name: 'law',
+      title: 'Gesetzestext',
+      default: true,
+    },
+    {
+      name: 'explanations',
+      title: 'Erläuterungen',
+    },
+  ],
   fields: [
     defineField({
-      title: 'Nummer',
+      title: 'Artikelnummer',
       name: 'number',
       type: 'number',
       validation: (Rule) => Rule.required(),
+      group: 'categorization'
     }),
     defineField(
       {
@@ -24,6 +40,7 @@ export const article = defineType({
         type: 'reference',
         to: [{ type: 'title' }],
         validation: (Rule) => Rule.required(),
+        group: 'categorization'
       }
     ),
     defineField(
@@ -32,6 +49,7 @@ export const article = defineType({
         name: 'chapter',
         type: 'reference',
         to: [{ type: 'chapter' }],
+        group: 'categorization',
         options: {
           filter: ({ document }) => {
             // @ts-expect-error
@@ -72,6 +90,24 @@ export const article = defineType({
         },
       }
     ),
+    defineField({
+      title: 'Artikeltitel',
+      name: 'name',
+      type: 'localeString',
+      group: 'law'
+    }),
+    defineField({
+      title: 'Artikelinhalt',
+      name: 'law',
+      type: 'localeBlockContent',
+      group: 'law'
+    }),
+    defineField({
+      title: 'Erläuterungen',
+      name: 'exp',
+      type: 'localeBlockContent',
+      group: 'explanations'
+    }),
     defineField({
       name: 'content',
       type: 'object',

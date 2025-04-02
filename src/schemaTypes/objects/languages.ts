@@ -15,7 +15,7 @@ export const localeString = defineType({
     title: lang.title,
     name: lang.id,
     type: 'string',
-    validation: (Rule) => lang.isDefault ? Rule.required() : [],
+    validation: (Rule) => lang.id === 'de' ? Rule.required() : [],
   }))
 })
 
@@ -27,6 +27,6 @@ export const localeBlockContent = defineType({
     title: lang.title,
     name: lang.id,
     type: 'blockContent',
-    validation: (Rule) => lang.isDefault ? Rule.required() : [],
+    validation: (Rule) => lang.id === 'de' ? Rule.required() : [],
   }))
 })

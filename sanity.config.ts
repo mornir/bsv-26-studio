@@ -3,6 +3,7 @@ import { structureTool } from 'sanity/structure'
 import { visionTool } from '@sanity/vision'
 import { schemaTypes } from './src/schemaTypes'
 import { structure } from './structure'
+import { languageFilter } from '@sanity/language-filter'
 
 // Environment variables for project configuration
 const projectId = process.env.SANITY_STUDIO_PROJECT_ID || 'your-projectID'
@@ -20,7 +21,15 @@ export default defineConfig({
       enabled: false,
     },
   },
-  plugins: [structureTool(), visionTool()],
+  plugins: [structureTool(), visionTool(), languageFilter({
+    supportedLanguages: [
+      { id: 'de', title: 'Deutsch' },
+      { id: 'fr', title: 'Französisch' },
+      { id: 'it', title: 'Italienisch' }
+    ],
+    defaultLanguages: ['de'],
+    documentTypes: ['article'],
+  })],
   schema: {
     types: schemaTypes,
   },

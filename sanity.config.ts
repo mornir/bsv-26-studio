@@ -28,7 +28,6 @@ export default defineConfig({
       { id: 'fr', title: 'Französisch' },
       { id: 'it', title: 'Italienisch' }
     ],
-    defaultLanguages: ['de'],
     documentTypes: ['article'],
   }),
   assist({

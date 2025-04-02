@@ -94,61 +94,21 @@ export const article = defineType({
       title: 'Artikeltitel',
       name: 'name',
       type: 'localeString',
-      group: 'law'
+      group: 'law',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       title: 'Artikelinhalt',
       name: 'law',
       type: 'localeBlockContent',
-      group: 'law'
+      group: 'law',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       title: 'Erläuterungen',
       name: 'exp',
       type: 'localeBlockContent',
       group: 'explanations'
-    }),
-    defineField({
-      name: 'content',
-      type: 'object',
-      title: 'Sprachauswahl',
-      validation: (Rule) => Rule.required(),
-      groups: [
-        {
-          name: 'de',
-          title: 'Deutsch',
-          default: true,
-        },
-        {
-          name: 'fr',
-          title: 'Französisch',
-        },
-        {
-          name: 'it',
-          title: 'Italienisch',
-        },
-      ],
-      fields: [
-        ...supportedLanguages.map(lang => defineField({
-          title: `Titel (${lang.title})`,
-          name: lang.id + 'Title',
-          type: 'string',
-          group: lang.id,
-          validation: (Rule) => lang.isDefault ? Rule.required() : [],
-        })),
-        ...supportedLanguages.map(lang => defineField({
-          title: `Gesetzestext (${lang.title})`,
-          name: lang.id + 'Law',
-          type: 'blockContent',
-          group: lang.id
-        })),
-        ...supportedLanguages.map(lang => defineField({
-          title: `Erläuterung (${lang.title})`,
-          name: lang.id + 'Explanation',
-          type: 'blockContent',
-          group: lang.id
-        }))
-      ]
     }),
   ],
   preview: {

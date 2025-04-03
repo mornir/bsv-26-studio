@@ -72,15 +72,26 @@ export const article = defineType({
         title: 'Abschnitt',
         name: 'section',
         type: 'reference',
+        group: 'categorization',
         to: [{ type: 'section' }],
         options: {
           filter: ({ document }) => {
             // @ts-expect-error
             if (!document?.title?._ref) {
               return {
-                filter: '_id == ""', // No chapters will be shown if no title is selected
+                filter: '_id == ""', // No sections will be shown if no title is selected
               };
             }
+
+            // @ts-expect-error
+            if (!document?.chapter?._ref) {
+              return {
+                filter: 'title._ref == $titleId',
+                // @ts-expect-error
+                params: { titleId: document.title._ref },
+              }
+            }
+
             return {
               filter: 'title._ref == $titleId && chapter._ref == $chapterId',
               // @ts-expect-error

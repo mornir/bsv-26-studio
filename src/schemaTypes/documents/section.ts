@@ -59,7 +59,10 @@ export default defineType({
     },
     prepare(selection) {
       const { name, number, titleNum, chapterNum } = selection
-      return { title: `Abschnitt ${number} ${name}`, subtitle: `Titel ${titleNum}; Kapitel ${chapterNum}` }
+      const subtitle = chapterNum ? `Titel ${titleNum}; Kapitel ${chapterNum}` : `Titel ${titleNum}`
+      return {
+        title: `Abschnitt ${number} ${name}`, subtitle,
+      }
     },
   },
   orderings: [

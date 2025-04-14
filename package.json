@@ -17,6 +17,7 @@
   "dependencies": {
     "@sanity/embeddings-index-ui": "^2.0.1",
     "@sanity/language-filter": "^4.0.4",
+    "@sanity/locale-de-de": "^1.1.17",
     "@sanity/vision": "^3.79.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

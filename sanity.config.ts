@@ -1,5 +1,6 @@
 import { defineConfig } from 'sanity'
 import { structureTool } from 'sanity/structure'
+import { deDELocale } from '@sanity/locale-de-de'
 import { visionTool } from '@sanity/vision'
 import { schemaTypes } from './src/schemaTypes'
 import { structure } from './structure'
@@ -22,7 +23,7 @@ export default defineConfig({
       enabled: false,
     },
   },
-  plugins: [structureTool(), visionTool(), embeddingsIndexDashboard(), languageFilter({
+  plugins: [structureTool(), deDELocale(), visionTool(), embeddingsIndexDashboard(), languageFilter({
     supportedLanguages: [
       { id: 'de', title: 'Deutsch' },
       { id: 'fr', title: 'Französisch' },

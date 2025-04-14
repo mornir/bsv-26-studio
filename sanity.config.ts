@@ -13,7 +13,6 @@ const dataset = process.env.SANITY_STUDIO_DATASET || 'production'
 
 
 export default defineConfig({
-  name: 'sanity-template-astro-clean',
   title: 'BSV 2026',
   projectId,
   dataset,

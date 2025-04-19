@@ -2,7 +2,7 @@ import { defineField, defineType } from 'sanity';
 
 export default defineType({
   name: 'section',
-  title: 'Abschnitt',
+  title: 'Abschnitte',
   type: 'document',
   fields: [
     defineField({

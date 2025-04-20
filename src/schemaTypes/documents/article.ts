@@ -10,6 +10,11 @@ export const article = defineType({
   name: 'article',
   title: 'Artikel',
   type: 'document',
+  validation: rule => rule.custom(fields => {
+    if (!fields?.law?.fr || !fields?.law?.de) return true
+    if (fields.law.fr.length !== fields.law.de.length) return "Missmatch"
+    return true
+  }),
   groups: [
     {
       name: 'categorization',

@@ -8,7 +8,8 @@ export default defineType({
     defineField({
       type: 'text',
       name: 'html',
-      title: 'HTML-Code'
+      title: 'HTML-Code',
+      validation: (Rule) => Rule.required(),
     })
   ],
   preview: {

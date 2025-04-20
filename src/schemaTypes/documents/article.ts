@@ -11,7 +11,9 @@ export const article = defineType({
   title: 'Artikel',
   type: 'document',
   validation: rule => rule.custom(fields => {
+    // @ts-expect-error
     if (!fields?.law?.fr || !fields?.law?.de) return true
+    // @ts-expect-error
     if (fields.law.fr.length !== fields.law.de.length) return "Anzahl Absätze FR entspricht nicht DE"
     return true
   }).warning(),

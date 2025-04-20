@@ -12,9 +12,9 @@ export const article = defineType({
   type: 'document',
   validation: rule => rule.custom(fields => {
     if (!fields?.law?.fr || !fields?.law?.de) return true
-    if (fields.law.fr.length !== fields.law.de.length) return "Missmatch"
+    if (fields.law.fr.length !== fields.law.de.length) return "Anzahl Absätze FR entspricht nicht DE"
     return true
-  }),
+  }).warning(),
   groups: [
     {
       name: 'categorization',

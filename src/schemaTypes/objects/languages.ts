@@ -1,11 +1,10 @@
 import { defineType, defineField } from 'sanity'
 
 export const supportedLanguages = [
-  { id: 'de', title: 'Deutsch', isDefault: true },
+  { id: 'de', title: 'Deutsch' },
   { id: 'fr', title: 'Französisch' },
   { id: 'it', title: 'Italienisch' }
 ]
-
 
 export const localeString = defineType({
   title: 'Localized string',

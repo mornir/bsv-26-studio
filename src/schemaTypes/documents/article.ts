@@ -1,12 +1,6 @@
 import { defineField, defineType } from 'sanity'
 import { TbSectionSign } from "react-icons/tb";
 
-export const supportedLanguages = [
-  { id: 'de', title: 'Deutsch', isDefault: true },
-  { id: 'fr', title: 'Französisch' },
-  { id: 'it', title: 'Italienisch' }
-]
-
 export const article = defineType({
   name: 'article',
   title: 'Artikel',

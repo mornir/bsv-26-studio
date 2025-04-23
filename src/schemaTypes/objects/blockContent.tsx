@@ -1,4 +1,4 @@
-import {defineType, defineArrayMember} from 'sanity'
+import { defineType, defineArrayMember } from 'sanity'
 
 /**
  * This is the schema definition for the rich text fields used for
@@ -18,23 +18,23 @@ export default defineType({
     defineArrayMember({
       title: 'Block',
       type: 'block',
-      of: [{name: 'table', type: 'table', title: 'Tabelle'}],
+      of: [{ name: 'table', type: 'table', title: 'Tabelle' }],
       // Styles let you set what your user can mark up blocks with. These
       // correspond with HTML tags, but you can set any title or value
       // you want and decide how you want to deal with it where you want to
       // use your content.
       styles: [],
       lists: [
-        {title: 'Numbered', value: 'number'},
-        {title: 'Bullet', value: 'bullet'},
+        { title: 'Numbered', value: 'number' },
+        { title: 'Bullet', value: 'bullet' },
       ],
       // Marks let you mark up inline text in the block editor.
       marks: {
         // Decorators usually describe a single property – e.g. a typographic
         // preference or highlighting by editors.
         decorators: [
-          {title: 'Strong', value: 'strong'},
-          {title: 'Emphasis', value: 'em'},
+          { title: 'Strong', value: 'strong' },
+          { title: 'Emphasis', value: 'em' },
         ],
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [

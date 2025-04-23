@@ -1,4 +1,5 @@
 import { defineField, defineType } from 'sanity'
+import { TbSectionSign } from "react-icons/tb";
 
 export const supportedLanguages = [
   { id: 'de', title: 'Deutsch', isDefault: true },
@@ -10,6 +11,7 @@ export const article = defineType({
   name: 'article',
   title: 'Artikel',
   type: 'document',
+  icon: TbSectionSign,
   validation: rule => rule.custom(fields => {
     // @ts-expect-error
     if (!fields?.law?.fr || !fields?.law?.de) return true

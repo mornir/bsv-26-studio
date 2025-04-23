@@ -16,6 +16,7 @@ export default defineType({
   type: 'array',
   of: [
     defineArrayMember({
+      options: { spellCheck: false },
       title: 'Block',
       type: 'block',
       of: [{ name: 'table', type: 'table', title: 'Tabelle' }],

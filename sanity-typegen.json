@@ -1,0 +1,5 @@
+{
+  "path": "../terminofeu-ppi-web/src/utils/sanity.ts",
+  "schema": "schema.json",
+  "generates": "../terminofeu-ppi-web/sanity.types.ts"
+}

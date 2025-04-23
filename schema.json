@@ -643,7 +643,7 @@
           "value": {
             "type": "string"
           },
-          "optional": true
+          "optional": false
         },
         "source": {
           "type": "objectAttribute",
@@ -705,44 +705,64 @@
             "value": {
               "type": "array",
               "of": {
-                "type": "object",
-                "attributes": {
-                  "marks": {
-                    "type": "objectAttribute",
-                    "value": {
-                      "type": "array",
-                      "of": {
-                        "type": "string"
+                "type": "union",
+                "of": [
+                  {
+                    "type": "object",
+                    "attributes": {
+                      "marks": {
+                        "type": "objectAttribute",
+                        "value": {
+                          "type": "array",
+                          "of": {
+                            "type": "string"
+                          }
+                        },
+                        "optional": true
+                      },
+                      "text": {
+                        "type": "objectAttribute",
+                        "value": {
+                          "type": "string"
+                        },
+                        "optional": true
+                      },
+                      "_type": {
+                        "type": "objectAttribute",
+                        "value": {
+                          "type": "string",
+                          "value": "span"
+                        }
                       }
                     },
-                    "optional": true
-                  },
-                  "text": {
-                    "type": "objectAttribute",
-                    "value": {
-                      "type": "string"
-                    },
-                    "optional": true
-                  },
-                  "_type": {
-                    "type": "objectAttribute",
-                    "value": {
-                      "type": "string",
-                      "value": "span"
-                    }
-                  }
-                },
-                "rest": {
-                  "type": "object",
-                  "attributes": {
-                    "_key": {
-                      "type": "objectAttribute",
-                      "value": {
-                        "type": "string"
+                    "rest": {
+                      "type": "object",
+                      "attributes": {
+                        "_key": {
+                          "type": "objectAttribute",
+                          "value": {
+                            "type": "string"
+                          }
+                        }
                       }
                     }
+                  },
+                  {
+                    "type": "object",
+                    "attributes": {
+                      "_key": {
+                        "type": "objectAttribute",
+                        "value": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "rest": {
+                      "type": "inline",
+                      "name": "table"
+                    }
                   }
-                }
+                ]
               }
             },
             "optional": true
@@ -844,6 +864,29 @@
     }
   },
   {
+    "name": "table",
+    "type": "type",
+    "value": {
+      "type": "object",
+      "attributes": {
+        "_type": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string",
+            "value": "table"
+          }
+        },
+        "html": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string"
+          },
+          "optional": false
+        }
+      }
+    }
+  },
+  {
     "name": "article",
     "type": "document",
     "attributes": {
@@ -883,7 +926,7 @@
         "value": {
           "type": "number"
         },
-        "optional": true
+        "optional": false
       },
       "title": {
         "type": "objectAttribute",
@@ -913,7 +956,7 @@
           },
           "dereferencesTo": "title"
         },
-        "optional": true
+        "optional": false
       },
       "chapter": {
         "type": "objectAttribute",
@@ -975,13 +1018,43 @@
         },
         "optional": true
       },
+      "theme": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "object",
+          "attributes": {
+            "_ref": {
+              "type": "objectAttribute",
+              "value": {
+                "type": "string"
+              }
+            },
+            "_type": {
+              "type": "objectAttribute",
+              "value": {
+                "type": "string",
+                "value": "reference"
+              }
+            },
+            "_weak": {
+              "type": "objectAttribute",
+              "value": {
+                "type": "boolean"
+              },
+              "optional": true
+            }
+          },
+          "dereferencesTo": "theme"
+        },
+        "optional": true
+      },
       "name": {
         "type": "objectAttribute",
         "value": {
           "type": "inline",
           "name": "localeString"
         },
-        "optional": true
+        "optional": false
       },
       "law": {
         "type": "objectAttribute",
@@ -989,7 +1062,7 @@
           "type": "inline",
           "name": "localeBlockContent"
         },
-        "optional": true
+        "optional": false
       },
       "exp": {
         "type": "objectAttribute",
@@ -1020,7 +1093,7 @@
             "type": "inline",
             "name": "blockContent"
           },
-          "optional": true
+          "optional": false
         },
         "fr": {
           "type": "objectAttribute",
@@ -1038,6 +1111,51 @@
           },
           "optional": true
         }
+      }
+    }
+  },
+  {
+    "name": "theme",
+    "type": "document",
+    "attributes": {
+      "_id": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        }
+      },
+      "_type": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string",
+          "value": "theme"
+        }
+      },
+      "_createdAt": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        }
+      },
+      "_updatedAt": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        }
+      },
+      "_rev": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        }
+      },
+      "name": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "inline",
+          "name": "localeString"
+        },
+        "optional": false
       }
     }
   },
@@ -1081,7 +1199,7 @@
         "value": {
           "type": "number"
         },
-        "optional": true
+        "optional": false
       },
       "title": {
         "type": "objectAttribute",
@@ -1111,7 +1229,7 @@
           },
           "dereferencesTo": "title"
         },
-        "optional": true
+        "optional": false
       },
       "chapter": {
         "type": "objectAttribute",
@@ -1149,7 +1267,7 @@
           "type": "inline",
           "name": "localeString"
         },
-        "optional": true
+        "optional": false
       }
     }
   },
@@ -1193,7 +1311,7 @@
         "value": {
           "type": "number"
         },
-        "optional": true
+        "optional": false
       },
       "title": {
         "type": "objectAttribute",
@@ -1223,7 +1341,7 @@
           },
           "dereferencesTo": "title"
         },
-        "optional": true
+        "optional": false
       },
       "name": {
         "type": "objectAttribute",
@@ -1231,7 +1349,7 @@
           "type": "inline",
           "name": "localeString"
         },
-        "optional": true
+        "optional": false
       }
     }
   },
@@ -1275,7 +1393,7 @@
         "value": {
           "type": "number"
         },
-        "optional": true
+        "optional": false
       },
       "name": {
         "type": "objectAttribute",
@@ -1283,7 +1401,7 @@
           "type": "inline",
           "name": "localeString"
         },
-        "optional": true
+        "optional": false
       }
     }
   },
@@ -1305,7 +1423,7 @@
           "value": {
             "type": "string"
           },
-          "optional": true
+          "optional": false
         },
         "fr": {
           "type": "objectAttribute",

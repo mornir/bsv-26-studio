@@ -9,7 +9,7 @@
     "start": "sanity start",
     "build": "sanity build",
     "deploy": "sanity deploy",
-    "types": "sanity schema extract && sanity typegen generate"
+    "types": "sanity schema extract --enforce-required-fields && sanity typegen generate"
   },
   "keywords": [
     "sanity"

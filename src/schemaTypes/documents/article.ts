@@ -20,7 +20,7 @@ export const article = defineType({
     },
     {
       name: 'law',
-      title: 'Gesetzestext',
+      title: 'Vorschriftstext',
       default: true,
     },
     {

@@ -1,9 +1,12 @@
 import { defineField, defineType } from 'sanity';
+import { TbTagFilled } from "react-icons/tb";
+
 
 export default defineType({
-  name: 'theme',
-  title: 'Themen',
+  name: 'tag',
+  title: 'Tag',
   type: 'document',
+  icon: TbTagFilled,
   fields: [
     defineField({
       name: 'name',

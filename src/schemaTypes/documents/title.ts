@@ -22,12 +22,12 @@ export default defineType({
   ],
   preview: {
     select: {
-      title: 'name.de',
+      name: 'name.de',
       number: 'number',
     },
     prepare(selection) {
-      const { title, number } = selection
-      return { title: `Titel ${number} ${title}` }
+      const { name, number } = selection
+      return { title: `${number}. Titel: ${name}` }
     },
   },
   orderings: [

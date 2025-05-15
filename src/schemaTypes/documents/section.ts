@@ -61,9 +61,9 @@ export default defineType({
     },
     prepare(selection) {
       const { name, number, titleNum, chapterNum } = selection
-      const subtitle = chapterNum ? `Titel ${titleNum}; Kapitel ${chapterNum}` : `Titel ${titleNum}`
+      const subtitle = chapterNum ? `${titleNum}. Titel; ${chapterNum}. Kapitel` : `${titleNum}. Titel`
       return {
-        title: `Abschnitt ${number} ${name}`, subtitle,
+        title: `${number}. Abschnitt: ${name}`, subtitle,
       }
     },
   },

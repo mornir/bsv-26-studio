@@ -1,5 +1,5 @@
 {
-  "path": "../terminofeu-ppi-web/src/utils/sanity.ts",
+  "path": "../digitale-bsv-web/src/utils/sanity.ts",
   "schema": "schema.json",
-  "generates": "../terminofeu-ppi-web/sanity.types.ts"
+  "generates": "../digitale-bsv-web/sanity.types.ts"
 }

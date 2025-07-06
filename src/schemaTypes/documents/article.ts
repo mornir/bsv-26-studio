@@ -28,8 +28,8 @@ export const article = defineType({
       default: true,
     },
     {
-      name: 'explanations',
-      title: 'Erläuterungen',
+      name: 'exp',
+      title: 'Erläuterung',
     },
   ],
   fields: [
@@ -137,7 +137,7 @@ export const article = defineType({
       title: 'Erläuterungen',
       name: 'exp',
       type: 'localeBlockContent',
-      group: 'explanations',
+      group: 'exp',
     }),
   ],
   preview: {

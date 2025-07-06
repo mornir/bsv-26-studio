@@ -29,3 +29,14 @@ export const localeBlockContent = defineType({
     validation: (Rule) => lang.id === 'de' ? Rule.required() : [],
   }))
 })
+
+export const localeText = defineType({
+  title: 'Localized text',
+  name: 'localeText',
+  type: 'object',
+  fields: supportedLanguages.map(lang => defineField({
+    title: lang.title,
+    name: lang.id,
+    type: 'text',
+  }))
+})

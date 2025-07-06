@@ -19,7 +19,7 @@ export default defineType({
       options: { spellCheck: false },
       title: 'Block',
       type: 'block',
-      of: [{ name: 'inlineTable', type: 'table', title: 'Inline-Tabelle' }],
+      /*  of: [{ name: 'inlineTable', type: 'table', title: 'Inline-Tabelle' }], */
       // Styles let you set what your user can mark up blocks with. These
       // correspond with HTML tags, but you can set any title or value
       // you want and decide how you want to deal with it where you want to
@@ -54,6 +54,6 @@ export default defineType({
         ],
       },
     }),
-    { name: 'blockTable', type: 'table', title: 'Tabellen-Block' },
+    /*    { name: 'blockTable', type: 'table', title: 'Tabellen-Block' }, */
   ],
 })

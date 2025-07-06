@@ -1,4 +1,5 @@
 import { defineType, defineArrayMember } from 'sanity'
+import { TbTableFilled } from 'react-icons/tb'
 
 /**
  * This is the schema definition for the rich text fields used for
@@ -54,6 +55,12 @@ export default defineType({
         ],
       },
     }),
-    /*    { name: 'blockTable', type: 'table', title: 'Tabellen-Block' }, */
+    {
+      name: 'blockTable',
+      title: 'Tabellen-Block',
+      type: 'reference',
+      to: [{ type: 'table' }],
+      icon: TbTableFilled,
+    },
   ],
 })

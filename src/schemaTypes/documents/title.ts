@@ -1,5 +1,5 @@
-import { defineField, defineType } from 'sanity';
-import { TbSquareLetterTFilled } from "react-icons/tb";
+import { defineField, defineType } from 'sanity'
+import { TbSquareLetterTFilled } from 'react-icons/tb'
 
 export default defineType({
   name: 'title',
@@ -34,9 +34,7 @@ export default defineType({
     {
       title: 'Nummer',
       name: 'number',
-      by: [
-        { field: 'number', direction: 'asc' }
-      ]
+      by: [{ field: 'number', direction: 'asc' }],
     },
-  ]
-});
+  ],
+})

@@ -1,5 +1,5 @@
-import { defineField, defineType } from 'sanity';
-import { TbSquareLetterAFilled } from "react-icons/tb";
+import { defineField, defineType } from 'sanity'
+import { TbSquareLetterAFilled } from 'react-icons/tb'
 
 export default defineType({
   name: 'section',
@@ -13,38 +13,34 @@ export default defineType({
       type: 'number',
       validation: (Rule) => Rule.required(),
     }),
-    defineField(
-      {
-        title: 'Titel',
-        name: 'title',
-        type: 'reference',
-        to: [{ type: 'title' }],
-        validation: (Rule) => Rule.required(),
-      }
-    ),
-    defineField(
-      {
-        title: 'Kapitel',
-        name: 'chapter',
-        type: 'reference',
-        to: [{ type: 'chapter' }],
-        options: {
-          filter: ({ document }) => {
-            // @ts-expect-error
-            if (!document?.title?._ref) {
-              return {
-                filter: '_id == ""', // No chapters will be shown if no title is selected
-              };
-            }
+    defineField({
+      title: 'Titel',
+      name: 'title',
+      type: 'reference',
+      to: [{ type: 'title' }],
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      title: 'Kapitel',
+      name: 'chapter',
+      type: 'reference',
+      to: [{ type: 'chapter' }],
+      options: {
+        filter: ({ document }) => {
+          // @ts-expect-error
+          if (!document?.title?._ref) {
             return {
-              filter: 'title._ref == $titleId',
-              // @ts-expect-error
-              params: { titleId: document.title._ref },
-            };
-          },
+              filter: '_id == ""', // No chapters will be shown if no title is selected
+            }
+          }
+          return {
+            filter: 'title._ref == $titleId',
+            // @ts-expect-error
+            params: { titleId: document.title._ref },
+          }
         },
-      }
-    ),
+      },
+    }),
     defineField({
       name: 'name',
       title: 'Name',
@@ -57,13 +53,16 @@ export default defineType({
       name: 'name.de',
       number: 'number',
       titleNum: 'title.number',
-      chapterNum: 'chapter.number'
+      chapterNum: 'chapter.number',
     },
     prepare(selection) {
       const { name, number, titleNum, chapterNum } = selection
-      const subtitle = chapterNum ? `${titleNum}. Titel; ${chapterNum}. Kapitel` : `${titleNum}. Titel`
+      const subtitle = chapterNum
+        ? `${titleNum}. Titel; ${chapterNum}. Kapitel`
+        : `${titleNum}. Titel`
       return {
-        title: `${number}. Abschnitt: ${name}`, subtitle,
+        title: `${number}. Abschnitt: ${name}`,
+        subtitle,
       }
     },
   },
@@ -71,9 +70,7 @@ export default defineType({
     {
       title: 'Nummer',
       name: 'number',
-      by: [
-        { field: 'number', direction: 'asc' }
-      ]
+      by: [{ field: 'number', direction: 'asc' }],
     },
-  ]
-});
+  ],
+})

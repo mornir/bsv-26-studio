@@ -1,5 +1,5 @@
-import { defineField, defineType } from 'sanity';
-import { TbSquareLetterKFilled } from "react-icons/tb";
+import { defineField, defineType } from 'sanity'
+import { TbSquareLetterKFilled } from 'react-icons/tb'
 
 export default defineType({
   name: 'chapter',
@@ -13,41 +13,39 @@ export default defineType({
       type: 'number',
       validation: (Rule) => Rule.required(),
     }),
-    defineField(
-      {
-        title: 'Titel',
-        name: 'title',
-        type: 'reference',
-        to: [{ type: 'title' }],
-        validation: (Rule) => Rule.required(),
-      }
-    ),
+    defineField({
+      title: 'Titel',
+      name: 'title',
+      type: 'reference',
+      to: [{ type: 'title' }],
+      validation: (Rule) => Rule.required(),
+    }),
     defineField({
       name: 'name',
       title: 'Name',
       type: 'localeString',
       validation: (Rule) => Rule.required(),
     }),
-
   ],
   preview: {
     select: {
       name: 'name.de',
       number: 'number',
-      titleNum: 'title.number'
+      titleNum: 'title.number',
     },
     prepare(selection) {
       const { name, number, titleNum } = selection
-      return { title: `${number}. Kapitel: ${name}`, subtitle: `${titleNum}. Titel` }
+      return {
+        title: `${number}. Kapitel: ${name}`,
+        subtitle: `${titleNum}. Titel`,
+      }
     },
   },
   orderings: [
     {
       title: 'Nummer',
       name: 'number',
-      by: [
-        { field: 'number', direction: 'asc' }
-      ]
+      by: [{ field: 'number', direction: 'asc' }],
     },
-  ]
-});
+  ],
+})

@@ -1,6 +1,5 @@
-import { defineField, defineType } from 'sanity';
-import { TbSparkles } from "react-icons/tb";
-
+import { defineField, defineType } from 'sanity'
+import { TbSparkles } from 'react-icons/tb'
 
 export default defineType({
   name: 'feature',
@@ -18,7 +17,6 @@ export default defineType({
       name: 'desc',
       title: 'Beschreibung',
       type: 'localeString',
-
     }),
   ],
   preview: {
@@ -26,4 +24,4 @@ export default defineType({
       title: 'name.de',
     },
   },
-});
+})

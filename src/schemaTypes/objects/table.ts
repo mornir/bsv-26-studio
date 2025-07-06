@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity';
+import { defineField, defineType } from 'sanity'
 
 export default defineType({
   name: 'table',
@@ -10,11 +10,11 @@ export default defineType({
       name: 'html',
       title: 'HTML-Code',
       validation: (Rule) => Rule.required(),
-    })
+    }),
   ],
   preview: {
     prepare() {
       return { title: 'Tabelle' }
     },
   },
-});
+})

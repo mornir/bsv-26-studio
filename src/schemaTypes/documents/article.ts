@@ -1,18 +1,22 @@
 import { defineField, defineType } from 'sanity'
-import { TbSectionSign } from "react-icons/tb";
+import { TbSectionSign } from 'react-icons/tb'
 
 export const article = defineType({
   name: 'article',
   title: 'Artikel',
   type: 'document',
   icon: TbSectionSign,
-  validation: rule => rule.custom(fields => {
-    // @ts-expect-error
-    if (!fields?.law?.fr || !fields?.law?.de) return true
-    // @ts-expect-error
-    if (fields.law.fr.length !== fields.law.de.length) return "Anzahl Absätze FR entspricht nicht DE"
-    return true
-  }).warning(),
+  validation: (rule) =>
+    rule
+      .custom((fields) => {
+        // @ts-expect-error
+        if (!fields?.law?.fr || !fields?.law?.de) return true
+        // @ts-expect-error
+        if (fields.law.fr.length !== fields.law.de.length)
+          return 'Anzahl Absätze FR entspricht nicht DE'
+        return true
+      })
+      .warning(),
   groups: [
     {
       name: 'categorization',
@@ -20,7 +24,7 @@ export const article = defineType({
     },
     {
       name: 'law',
-      title: 'Vorschriftstext',
+      title: 'Vorschriftentext',
       default: true,
     },
     {
@@ -34,92 +38,87 @@ export const article = defineType({
       name: 'number',
       type: 'number',
       validation: (Rule) => Rule.required(),
-      group: 'categorization'
+      group: 'categorization',
     }),
-    defineField(
-      {
-        title: 'Titel',
-        name: 'title',
-        type: 'reference',
-        to: [{ type: 'title' }],
-        validation: (Rule) => Rule.required(),
-        group: 'categorization'
-      }
-    ),
-    defineField(
-      {
-        title: 'Kapitel',
-        name: 'chapter',
-        type: 'reference',
-        to: [{ type: 'chapter' }],
-        group: 'categorization',
-        options: {
-          filter: ({ document }) => {
-            // @ts-expect-error
-            if (!document?.title?._ref) {
-              return {
-                filter: '_id == ""', // No chapters will be shown if no title is selected
-              };
+    defineField({
+      title: 'Titel',
+      name: 'title',
+      type: 'reference',
+      to: [{ type: 'title' }],
+      validation: (Rule) => Rule.required(),
+      group: 'categorization',
+    }),
+    defineField({
+      title: 'Kapitel',
+      name: 'chapter',
+      type: 'reference',
+      to: [{ type: 'chapter' }],
+      group: 'categorization',
+      options: {
+        filter: ({ document }) => {
+          // @ts-expect-error
+          if (!document?.title?._ref) {
+            return {
+              filter: '_id == ""', // No chapters will be shown if no title is selected
             }
+          }
+          return {
+            filter: 'title._ref == $titleId',
+            // @ts-expect-error
+            params: { titleId: document.title._ref },
+          }
+        },
+      },
+    }),
+    defineField({
+      title: 'Abschnitt',
+      name: 'section',
+      type: 'reference',
+      group: 'categorization',
+      to: [{ type: 'section' }],
+      options: {
+        filter: ({ document }) => {
+          // @ts-expect-error
+          if (!document?.title?._ref) {
+            return {
+              filter: '_id == ""', // No sections will be shown if no title is selected
+            }
+          }
+
+          // @ts-expect-error
+          if (!document?.chapter?._ref) {
             return {
               filter: 'title._ref == $titleId',
               // @ts-expect-error
               params: { titleId: document.title._ref },
-            };
-          },
-        },
-      }
-    ),
-    defineField(
-      {
-        title: 'Abschnitt',
-        name: 'section',
-        type: 'reference',
-        group: 'categorization',
-        to: [{ type: 'section' }],
-        options: {
-          filter: ({ document }) => {
-            // @ts-expect-error
-            if (!document?.title?._ref) {
-              return {
-                filter: '_id == ""', // No sections will be shown if no title is selected
-              };
             }
-
-            // @ts-expect-error
-            if (!document?.chapter?._ref) {
-              return {
-                filter: 'title._ref == $titleId',
-                // @ts-expect-error
-                params: { titleId: document.title._ref },
-              }
-            }
-
-            return {
-              filter: 'title._ref == $titleId && chapter._ref == $chapterId',
-              // @ts-expect-error
-              params: { titleId: document.title._ref, chapterId: document.chapter._ref },
-            };
-          },
-        },
-      }
-    ),
-    defineField(
-      {
-        title: 'Tags',
-        name: 'tag',
-        type: 'array',
-        of: [
-          {
-            type: 'reference',
-            to: [
-              { type: 'tag' },
-            ]
           }
-        ],
-        group: 'categorization'
-      }
-    ),
+
+          return {
+            filter: 'title._ref == $titleId && chapter._ref == $chapterId',
+
+            params: {
+              // @ts-expect-error
+              titleId: document.title._ref,
+              // @ts-expect-error
+              chapterId: document.chapter._ref,
+            },
+          }
+        },
+      },
+    }),
+    defineField({
+      title: 'Tags',
+      name: 'tag',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'tag' }],
+        },
+      ],
+      group: 'categorization',
+    }),
     defineField({
       title: 'Artikeltitel',
       name: 'name',
@@ -138,7 +137,7 @@ export const article = defineType({
       title: 'Erläuterungen',
       name: 'exp',
       type: 'localeBlockContent',
-      group: 'explanations'
+      group: 'explanations',
     }),
   ],
   preview: {
@@ -155,9 +154,7 @@ export const article = defineType({
     {
       title: 'Nummer',
       name: 'number',
-      by: [
-        { field: 'number', direction: 'asc' }
-      ]
+      by: [{ field: 'number', direction: 'asc' }],
     },
-  ]
+  ],
 })

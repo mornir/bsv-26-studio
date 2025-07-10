@@ -17,6 +17,7 @@ export default defineType({
       name: 'desc',
       title: 'Beschreibung',
       type: 'localeString',
+      validation: (Rule) => Rule.required(),
     }),
   ],
   preview: {

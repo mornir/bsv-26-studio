@@ -34,6 +34,20 @@ export const localeBlockContent = defineType({
   ),
 })
 
+export const localeSimpleEditor = defineType({
+  title: 'Localized block content',
+  name: 'localeSimpleEditor',
+  type: 'object',
+  fields: supportedLanguages.map((lang) =>
+    defineField({
+      title: lang.title,
+      name: lang.id,
+      type: 'simpleEditor',
+      validation: (Rule) => (lang.id === 'de' ? Rule.required() : []),
+    }),
+  ),
+})
+
 export const localeText = defineType({
   title: 'Localized text',
   name: 'localeText',
@@ -43,6 +57,7 @@ export const localeText = defineType({
       title: lang.title,
       name: lang.id,
       type: 'text',
+      validation: (Rule) => (lang.id === 'de' ? Rule.required() : []),
     }),
   ),
 })

@@ -19,6 +19,11 @@ export default defineType({
       type: 'localeString',
       validation: (Rule) => Rule.required(),
     }),
+    defineField({
+      name: 'color',
+      title: 'Farbe',
+      type: 'color',
+    }),
   ],
   preview: {
     select: {

@@ -11,6 +11,7 @@ import section from './documents/section'
 import tag from './documents/tag'
 import feature from './documents/feature'
 import table from './documents/table'
+import simpleEditor from './objects/simpleEditor'
 
 // Export an array of all the schema types.  This is used in the Sanity Studio configuration. https://www.sanity.io/docs/schema-types
 
@@ -19,6 +20,7 @@ export const schemaTypes = [
   table,
   localeString,
   blockContent,
+  simpleEditor,
   localeBlockContent,
   localeText,
   title,

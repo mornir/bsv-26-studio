@@ -20,6 +20,11 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'desc',
+      title: 'Beschreibung',
+      type: 'localeSimpleEditor',
+    }),
+    defineField({
       name: 'color',
       title: 'Farbe',
       type: 'color',

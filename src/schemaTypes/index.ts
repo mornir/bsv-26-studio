@@ -2,6 +2,7 @@ import blockContent from './objects/blockContent'
 import {
   localeString,
   localeBlockContent,
+  localeSimpleEditor,
   localeText,
 } from './objects/languages'
 import { article } from './documents/article'
@@ -20,6 +21,7 @@ export const schemaTypes = [
   table,
   localeString,
   blockContent,
+  localeSimpleEditor,
   simpleEditor,
   localeBlockContent,
   localeText,

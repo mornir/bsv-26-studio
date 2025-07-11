@@ -6,7 +6,7 @@ export default defineType({
   type: 'array',
   of: [
     defineArrayMember({
-      options: { spellCheck: false },
+      options: { spellCheck: false, oneLine: true },
       title: 'Block',
       type: 'block',
       styles: [],

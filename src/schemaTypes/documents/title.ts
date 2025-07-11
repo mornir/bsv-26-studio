@@ -28,6 +28,7 @@ export default defineType({
       name: 'color',
       title: 'Farbe',
       type: 'color',
+      validation: (Rule) => Rule.required(),
     }),
   ],
   preview: {

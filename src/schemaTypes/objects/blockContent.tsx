@@ -38,6 +38,7 @@ export default defineType({
         ],
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
+          //TODO: if external links are needed, replace with object from links.ts
           {
             title: 'URL',
             name: 'link',

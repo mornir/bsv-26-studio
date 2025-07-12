@@ -1,5 +1,4 @@
 import { defineType, defineArrayMember } from 'sanity'
-import { TbLink } from 'react-icons/tb'
 
 export default defineType({
   title: 'Block Content',
@@ -20,22 +19,8 @@ export default defineType({
         annotations: [
           {
             name: 'internalLink',
-            type: 'object',
+            type: 'internalLink',
             title: 'Interne Verlinkung',
-            icon: TbLink,
-            fields: [
-              {
-                name: 'reference',
-                type: 'reference',
-                title: 'Verweis',
-                validation: (Rule) => Rule.required(),
-                to: [
-                  { type: 'article' },
-                  { type: 'title' },
-                  { type: 'chapter' },
-                ],
-              },
-            ],
           },
         ],
       },

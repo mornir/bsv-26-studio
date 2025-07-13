@@ -23,7 +23,7 @@ export default defineConfig({
     },
   },
   plugins: [
-    structureTool(),
+    structureTool({ structure }),
     deDELocale(),
     visionTool(),
     colorInput(),

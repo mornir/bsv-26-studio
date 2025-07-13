@@ -3,7 +3,7 @@ import { TbPaperclip } from 'react-icons/tb'
 
 export default defineType({
   name: 'appendix',
-  title: 'Anhänge',
+  title: 'Anhang',
   type: 'document',
   icon: TbPaperclip,
   fields: [

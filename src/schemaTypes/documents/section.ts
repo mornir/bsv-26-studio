@@ -3,7 +3,7 @@ import { TbSquareLetterAFilled } from 'react-icons/tb'
 
 export default defineType({
   name: 'section',
-  title: 'Abschnitte',
+  title: 'Abschnitt',
   type: 'document',
   icon: TbSquareLetterAFilled,
   fields: [

@@ -3,7 +3,7 @@ import { TbPhotoFilled } from 'react-icons/tb'
 
 export default defineType({
   name: 'figure',
-  title: 'Abbildungen',
+  title: 'Abbildung',
   type: 'document',
   icon: TbPhotoFilled,
   fields: [

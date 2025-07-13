@@ -3,7 +3,7 @@ import { TbTableFilled } from 'react-icons/tb'
 
 export default defineType({
   name: 'table',
-  title: 'Tabellen',
+  title: 'Tabelle',
   type: 'document',
   icon: TbTableFilled,
   fields: [

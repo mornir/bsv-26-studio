@@ -3,7 +3,7 @@ import { TbTagFilled } from 'react-icons/tb'
 
 export default defineType({
   name: 'tag',
-  title: 'Tags',
+  title: 'Tag',
   type: 'document',
   icon: TbTagFilled,
   fields: [

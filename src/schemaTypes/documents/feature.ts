@@ -3,7 +3,7 @@ import { TbSparkles } from 'react-icons/tb'
 
 export default defineType({
   name: 'feature',
-  title: 'Features',
+  title: 'Feature',
   type: 'document',
   icon: TbSparkles,
   fields: [

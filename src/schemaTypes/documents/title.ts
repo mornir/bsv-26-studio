@@ -1,11 +1,11 @@
 import { defineField, defineType } from 'sanity'
-import { TbSquareLetterTFilled } from 'react-icons/tb'
+import { TbSquareLetterT } from 'react-icons/tb'
 
 export default defineType({
   name: 'title',
   title: 'Titel',
   type: 'document',
-  icon: TbSquareLetterTFilled,
+  icon: TbSquareLetterT,
   fields: [
     defineField({
       title: 'Nummer',

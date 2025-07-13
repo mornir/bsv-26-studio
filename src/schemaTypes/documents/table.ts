@@ -1,11 +1,11 @@
 import { defineField, defineType } from 'sanity'
-import { TbTableFilled } from 'react-icons/tb'
+import { TbTable } from 'react-icons/tb'
 
 export default defineType({
   name: 'table',
   title: 'Tabelle',
   type: 'document',
-  icon: TbTableFilled,
+  icon: TbTable,
   fields: [
     defineField({
       name: 'name',

@@ -1,11 +1,11 @@
 import { defineField, defineType } from 'sanity'
-import { TbPhotoFilled } from 'react-icons/tb'
+import { TbPhoto } from 'react-icons/tb'
 
 export default defineType({
   name: 'figure',
   title: 'Abbildung',
   type: 'document',
-  icon: TbPhotoFilled,
+  icon: TbPhoto,
   fields: [
     defineField({
       title: 'Nummer',

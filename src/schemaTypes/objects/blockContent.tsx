@@ -1,5 +1,6 @@
 import { defineType, defineArrayMember } from 'sanity'
 import { TbTableFilled } from 'react-icons/tb'
+import { TbMath } from 'react-icons/tb'
 
 export default defineType({
   title: 'Block Content',
@@ -54,5 +55,6 @@ export default defineType({
         ],
       },
     }),
+    defineArrayMember({ type: 'latex', icon: TbMath, title: 'Math block' }),
   ],
 })

@@ -7,6 +7,7 @@ import { structure } from './structure'
 import { languageFilter } from '@sanity/language-filter'
 import { embeddingsIndexDashboard } from '@sanity/embeddings-index-ui'
 import { colorInput } from '@sanity/color-input'
+import { latexInput } from 'sanity-plugin-latex-input'
 
 // Environment variables for project configuration
 const projectId = process.env.SANITY_STUDIO_PROJECT_ID || 'your-projectID'
@@ -27,6 +28,7 @@ export default defineConfig({
     deDELocale(),
     visionTool(),
     colorInput(),
+    latexInput(),
     embeddingsIndexDashboard(),
     languageFilter({
       supportedLanguages: [

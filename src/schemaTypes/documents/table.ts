@@ -14,6 +14,13 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      title: 'Titel',
+      name: 'title',
+      type: 'reference',
+      to: [{ type: 'title' }],
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       type: 'localeText',
       name: 'html',
       title: 'Tabelle (HTML-Code)',

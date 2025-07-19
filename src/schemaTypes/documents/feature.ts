@@ -1,11 +1,11 @@
 import { defineField, defineType } from 'sanity'
-import { TbSparkles } from 'react-icons/tb'
+import { TbStar } from 'react-icons/tb'
 
 export default defineType({
   name: 'feature',
   title: 'Feature',
   type: 'document',
-  icon: TbSparkles,
+  icon: TbStar,
   fields: [
     defineField({
       name: 'name',

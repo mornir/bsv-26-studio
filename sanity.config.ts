@@ -5,7 +5,6 @@ import { visionTool } from '@sanity/vision'
 import { schemaTypes } from './src/schemaTypes'
 import { structure } from './structure'
 import { languageFilter } from '@sanity/language-filter'
-import { embeddingsIndexDashboard } from '@sanity/embeddings-index-ui'
 import { colorInput } from '@sanity/color-input'
 import { latexInput } from 'sanity-plugin-latex-input'
 
@@ -29,7 +28,6 @@ export default defineConfig({
     visionTool(),
     colorInput(),
     latexInput(),
-    embeddingsIndexDashboard(),
     languageFilter({
       supportedLanguages: [
         { id: 'de', title: 'Deutsch' },

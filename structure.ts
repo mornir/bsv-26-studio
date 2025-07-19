@@ -11,6 +11,7 @@ export const structure: StructureResolver = (S) =>
       S.documentTypeListItem('appendix').title('Anhänge'),
       S.documentTypeListItem('figure').title('Abbildungen'),
       S.documentTypeListItem('table').title('Tabellen'),
+      S.documentTypeListItem('faq').title('Anfragen'),
       S.divider(),
       S.documentTypeListItem('tag').title('Tags'),
       S.documentTypeListItem('feature').title('Features'),

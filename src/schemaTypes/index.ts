@@ -13,6 +13,7 @@ import section from './documents/section'
 import tag from './documents/tag'
 import feature from './documents/feature'
 import figure from './documents/figure'
+import faq from './documents/faq'
 import appendix from './documents/appendix'
 import table from './documents/table'
 import simpleEditor from './objects/simpleEditor'
@@ -23,6 +24,7 @@ export const schemaTypes = [
   internalLink,
   externalLink,
   article,
+  faq,
   table,
   figure,
   appendix,

@@ -15,25 +15,25 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/color-input": "^4.0.4",
+    "@sanity/color-input": "^4.0.5",
     "@sanity/embeddings-index-ui": "^2.0.1",
-    "@sanity/language-filter": "^4.0.4",
-    "@sanity/locale-de-de": "^1.1.17",
-    "@sanity/vision": "^3.79.0",
+    "@sanity/language-filter": "^4.0.5",
+    "@sanity/locale-de-de": "^1.1.23",
+    "@sanity/vision": "^4.0.1",
     "install": "^0.13.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",
     "sanity": "^4.0.1",
     "sanity-plugin-latex-input": "^2.0.6",
-    "styled-components": "^6.1.15"
+    "styled-components": "^6.1.19"
   },
   "devDependencies": {
     "@sanity/eslint-config-studio": "^5.0.2",
-    "@types/react": "^19.0.10",
-    "eslint": "^9.22.0",
-    "prettier": "^3.5.3",
-    "typescript": "^5.8.2"
+    "@types/react": "^19.1.8",
+    "eslint": "^9.31.0",
+    "prettier": "^3.6.2",
+    "typescript": "^5.8.3"
   },
   "prettier": {
     "semi": false,

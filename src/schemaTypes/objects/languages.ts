@@ -35,7 +35,7 @@ export const localeBlockContent = defineType({
 })
 
 export const localeSimpleEditor = defineType({
-  title: 'Localized block content',
+  title: 'Localized simple editor',
   name: 'localeSimpleEditor',
   type: 'object',
   fields: supportedLanguages.map((lang) =>

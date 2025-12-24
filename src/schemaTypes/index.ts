@@ -18,6 +18,10 @@ import appendix from './documents/appendix'
 import table from './documents/table'
 import simpleEditor from './objects/simpleEditor'
 
+// Tables
+import usersGroup from './documents/tables/usersGroup'
+import measureTarget from './documents/tables/measureTarget'
+
 // Export an array of all the schema types.  This is used in the Sanity Studio configuration. https://www.sanity.io/docs/schema-types
 
 export const schemaTypes = [
@@ -27,6 +31,8 @@ export const schemaTypes = [
   faq,
   table,
   figure,
+  usersGroup,
+  measureTarget,
   appendix,
   localeString,
   blockContent,

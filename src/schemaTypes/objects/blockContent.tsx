@@ -16,7 +16,7 @@ export default defineType({
           name: 'table',
           title: 'Tabelle',
           type: 'reference',
-          to: [{ type: 'table' }],
+          to: [{ type: 'table' }, { type: 'measureTarget' }],
           icon: TbTableFilled,
         },
       ],

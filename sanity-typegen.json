@@ -1,5 +1,0 @@
-{
-  "path": "../digitale-bsv-web/src/sanity/queries.ts",
-  "schema": "schema.json",
-  "generates": "../digitale-bsv-web/src/sanity/sanity.types.ts"
-}

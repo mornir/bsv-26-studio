@@ -18,14 +18,14 @@
     "@sanity/color-input": "^4.0.5",
     "@sanity/language-filter": "^4.0.5",
     "@sanity/locale-de-de": "^1.1.23",
+    "@sanity/styled-components": "^6.1.24",
     "@sanity/vision": "^4.0.1",
     "install": "^0.13.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",
     "sanity": "^5.2.0",
-    "sanity-plugin-latex-input": "^2.0.6",
-    "styled-components": "^6.1.19"
+    "sanity-plugin-latex-input": "^2.0.6"
   },
   "devDependencies": {
     "@sanity/eslint-config-studio": "^5.0.2",

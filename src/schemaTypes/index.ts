@@ -10,7 +10,6 @@ import { article } from './documents/article'
 import title from './documents/title'
 import chapter from './documents/chapter'
 import section from './documents/section'
-import tag from './documents/tag'
 import feature from './documents/feature'
 import figure from './documents/figure'
 import faq from './documents/faq'
@@ -43,6 +42,5 @@ export const schemaTypes = [
   title,
   chapter,
   section,
-  tag,
   feature,
 ]

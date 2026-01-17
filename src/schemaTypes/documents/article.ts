@@ -108,18 +108,6 @@ export const article = defineType({
       },
     }),
     defineField({
-      title: 'Tags',
-      name: 'tag',
-      type: 'array',
-      of: [
-        {
-          type: 'reference',
-          to: [{ type: 'tag' }],
-        },
-      ],
-      group: 'categorization',
-    }),
-    defineField({
       title: 'Artikeltitel',
       name: 'name',
       type: 'localeString',

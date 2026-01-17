@@ -16,6 +16,5 @@ export const structure: StructureResolver = (S) =>
       S.documentTypeListItem('userGroup').title('Nutzergruppen'),
       S.documentTypeListItem('measureTarget').title('Massnahmen - Schutzgüter'),
       S.divider(),
-      S.documentTypeListItem('tag').title('Tags'),
       S.documentTypeListItem('feature').title('Features'),
     ])

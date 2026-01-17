@@ -25,7 +25,6 @@ export const article = defineType({
     {
       name: 'law',
       title: 'Vorschriftentext',
-      default: true,
     },
     {
       name: 'exp',

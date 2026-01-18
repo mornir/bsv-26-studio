@@ -1,17 +1,22 @@
 import { defineField, defineType } from 'sanity'
-import { TbLink, TbExternalLink } from 'react-icons/tb'
+import { TbSectionSign, TbExternalLink } from 'react-icons/tb'
 
 export const internalLink = defineType({
   name: 'internalLink',
   type: 'object',
-  icon: TbLink,
+  icon: TbSectionSign,
   fields: [
     defineField({
       name: 'reference',
       type: 'reference',
       title: 'Verweis',
+      description:
+        'Verweis auf einen Artikel, ein Kapitel oder einen Abschnitt.',
       validation: (Rule) => Rule.required(),
       to: [{ type: 'article' }, { type: 'title' }, { type: 'chapter' }],
+      options: {
+        disableNew: true,
+      },
     }),
   ],
 })

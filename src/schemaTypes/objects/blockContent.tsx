@@ -1,4 +1,4 @@
-import { defineType, defineArrayMember } from 'sanity'
+import { defineField, defineType, defineArrayMember } from 'sanity'
 import { TbTableFilled } from 'react-icons/tb'
 import { TbMath, TbPhoto } from 'react-icons/tb'
 
@@ -39,18 +39,15 @@ export default defineType({
         ],
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
-          //TODO: if external links are needed, replace with object from links.ts
           {
-            title: 'URL',
+            name: 'internalLink',
+            type: 'internalLink',
+            title: 'Verweis',
+          },
+          {
             name: 'link',
-            type: 'object',
-            fields: [
-              {
-                title: 'URL',
-                name: 'href',
-                type: 'url',
-              },
-            ],
+            type: 'externalLink',
+            title: 'External link',
           },
         ],
       },

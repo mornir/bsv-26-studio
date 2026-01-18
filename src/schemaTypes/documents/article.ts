@@ -6,7 +6,7 @@ export const article = defineType({
   title: 'Artikel',
   type: 'document',
   icon: TbSectionSign,
-  validation: (rule) =>
+  /*   validation: (rule) =>
     rule
       .custom((fields) => {
         // @ts-expect-error
@@ -16,7 +16,7 @@ export const article = defineType({
           return 'Anzahl Absätze FR entspricht nicht DE'
         return true
       })
-      .warning(),
+      .warning(), */
   groups: [
     {
       name: 'categorization',

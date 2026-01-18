@@ -12,13 +12,13 @@ export default defineType({
       title: 'Block',
       type: 'block',
       of: [
-        {
+        defineArrayMember({
           name: 'table',
           title: 'Tabelle',
           type: 'reference',
           to: [{ type: 'table' }, { type: 'measureTarget' }],
           icon: TbTableFilled,
-        },
+        }),
       ],
       // Styles let you set what your user can mark up blocks with. These
       // correspond with HTML tags, but you can set any title or value
@@ -39,16 +39,16 @@ export default defineType({
         ],
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
-          {
+          defineField({
             name: 'internalLink',
             type: 'internalLink',
             title: 'Verweis',
-          },
-          {
+          }),
+          defineField({
             name: 'link',
             type: 'externalLink',
             title: 'External link',
-          },
+          }),
         ],
       },
     }),

@@ -47,7 +47,7 @@ export default defineType({
           defineField({
             name: 'link',
             type: 'externalLink',
-            title: 'External link',
+            title: 'Externer Link',
           }),
         ],
       },

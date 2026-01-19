@@ -13,7 +13,7 @@ export const internalLink = defineType({
       description:
         'Verweis auf einen Artikel, ein Kapitel oder einen Abschnitt.',
       validation: (Rule) => Rule.required(),
-      to: [{ type: 'article' }, { type: 'title' }, { type: 'chapter' }],
+      to: [{ type: 'article' }],
       options: {
         disableNew: true,
       },
@@ -30,6 +30,7 @@ export const externalLink = defineType({
       title: 'URL',
       name: 'href',
       type: 'url',
+      description: 'Verweis auf eine externe Website',
       validation: (Rule) => Rule.required(),
     }),
   ],

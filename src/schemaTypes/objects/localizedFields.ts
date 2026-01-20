@@ -61,3 +61,26 @@ export const localeText = defineType({
     }),
   ),
 })
+
+export const localeImage = defineType({
+  title: 'Localized Image',
+  name: 'localeImage',
+  type: 'object',
+  fields: supportedLanguages.map((lang) =>
+    defineField({
+      title: lang.title,
+      name: lang.id,
+      type: 'image',
+      validation: (Rule) => (lang.id === 'de' ? Rule.required() : []),
+      fields: [
+        defineField({
+          name: 'alt',
+          title: 'Alternativtext',
+          type: 'string',
+          description: 'Beschreibt den Bildinhalt für Screenreader',
+          validation: (Rule) => Rule.required(),
+        }),
+      ],
+    }),
+  ),
+})

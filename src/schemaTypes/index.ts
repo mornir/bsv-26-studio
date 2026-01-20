@@ -5,7 +5,8 @@ import {
   localeBlockContent,
   localeSimpleEditor,
   localeText,
-} from './objects/languages'
+  localeImage,
+} from './objects/localizedFields'
 import { article } from './documents/article'
 import title from './documents/title'
 import chapter from './documents/chapter'
@@ -39,6 +40,7 @@ export const schemaTypes = [
   simpleEditor,
   localeBlockContent,
   localeText,
+  localeImage,
   title,
   chapter,
   section,

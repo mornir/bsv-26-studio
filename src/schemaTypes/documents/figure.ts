@@ -14,21 +14,22 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      title: 'Titel',
-      name: 'title',
-      type: 'reference',
-      to: [{ type: 'title' }],
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
       name: 'name',
       title: 'Name',
       type: 'localeString',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      title: 'Titel',
+      name: 'title',
+      type: 'reference',
+      description: 'BSV-Titel, zu dem die Abbildung gehört.',
+      to: [{ type: 'title' }],
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'image',
-      type: 'image',
+      type: 'localeImage',
       title: 'Bild',
     }),
   ],
@@ -37,7 +38,7 @@ export default defineType({
       name: 'name.de',
       number: 'number',
       titleNum: 'title.number',
-      media: 'image',
+      media: 'image.de',
     },
     prepare(selection) {
       const { name, number, titleNum, media } = selection

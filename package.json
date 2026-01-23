@@ -36,5 +36,8 @@
   "prettier": {
     "semi": false,
     "singleQuote": true
-  }
+  },
+  "trustedDependencies": [
+    "@swc/core"
+  ]
 }

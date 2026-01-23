@@ -103,7 +103,7 @@ export const article = defineType({
       title: 'Artikelnummer',
       name: 'number',
       type: 'number',
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().integer().positive(),
       group: 'categorization',
     }),
     defineField({

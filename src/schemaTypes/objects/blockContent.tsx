@@ -1,6 +1,11 @@
 import { defineField, defineType, defineArrayMember } from 'sanity'
-import { TbTableFilled } from 'react-icons/tb'
-import { TbMath, TbPhoto } from 'react-icons/tb'
+import {
+  TbTableFilled,
+  TbMath,
+  TbPhoto,
+  TbSuperscript,
+  TbSubscript,
+} from 'react-icons/tb'
 
 export default defineType({
   title: 'Block Content',
@@ -36,6 +41,18 @@ export default defineType({
         decorators: [
           { title: 'Strong', value: 'strong' },
           { title: 'Emphasis', value: 'em' },
+          {
+            title: 'Superscript',
+            value: 'sup',
+            icon: TbSuperscript,
+            component: ({ children }) => <sup>{children}</sup>,
+          },
+          {
+            title: 'Subscript',
+            value: 'sub',
+            icon: TbSubscript,
+            component: ({ children }) => <sub>{children}</sub>,
+          },
         ],
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [

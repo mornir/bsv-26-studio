@@ -773,6 +773,21 @@
                           "type": "inline",
                           "name": "externalLink"
                         }
+                      },
+                      {
+                        "type": "object",
+                        "attributes": {
+                          "_key": {
+                            "type": "objectAttribute",
+                            "value": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "rest": {
+                          "type": "inline",
+                          "name": "figure.reference"
+                        }
                       }
                     ]
                   }
@@ -819,21 +834,6 @@
             "rest": {
               "type": "inline",
               "name": "latex"
-            }
-          },
-          {
-            "type": "object",
-            "attributes": {
-              "_key": {
-                "type": "objectAttribute",
-                "value": {
-                  "type": "string"
-                }
-              }
-            },
-            "rest": {
-              "type": "inline",
-              "name": "figure.reference"
             }
           }
         ]
@@ -1589,13 +1589,6 @@
           "type": "string"
         }
       },
-      "number": {
-        "type": "objectAttribute",
-        "value": {
-          "type": "number"
-        },
-        "optional": false
-      },
       "title": {
         "type": "objectAttribute",
         "value": {
@@ -1619,6 +1612,13 @@
           "name": "section.reference"
         },
         "optional": true
+      },
+      "number": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "number"
+        },
+        "optional": false
       },
       "name": {
         "type": "objectAttribute",

@@ -33,13 +33,6 @@ export const article = defineType({
   ],
   fields: [
     defineField({
-      title: 'Artikelnummer',
-      name: 'number',
-      type: 'number',
-      validation: (Rule) => Rule.required(),
-      group: 'categorization',
-    }),
-    defineField({
       title: 'Titel',
       name: 'title',
       type: 'reference',
@@ -105,6 +98,13 @@ export const article = defineType({
           }
         },
       },
+    }),
+    defineField({
+      title: 'Artikelnummer',
+      name: 'number',
+      type: 'number',
+      validation: (Rule) => Rule.required(),
+      group: 'categorization',
     }),
     defineField({
       title: 'Artikeltitel',

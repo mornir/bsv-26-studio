@@ -49,16 +49,16 @@ export default defineType({
             type: 'externalLink',
             title: 'Externer Link',
           }),
+          defineField({
+            type: 'reference',
+            name: 'figure',
+            to: [{ type: 'figure' }],
+            icon: TbPhoto,
+            title: 'Abbildung',
+          }),
         ],
       },
     }),
     defineArrayMember({ type: 'latex', icon: TbMath, title: 'Math block' }),
-    defineArrayMember({
-      type: 'reference',
-      name: 'figure',
-      to: [{ type: 'figure' }],
-      icon: TbPhoto,
-      title: 'Abbildung',
-    }),
   ],
 })

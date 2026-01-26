@@ -45,7 +45,10 @@ export default defineType({
     {
       title: 'Nummer',
       name: 'number',
-      by: [{ field: 'number', direction: 'asc' }],
+      by: [
+        { field: 'title.number', direction: 'asc' },
+        { field: 'number', direction: 'asc' },
+      ],
     },
   ],
 })

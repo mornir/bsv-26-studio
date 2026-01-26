@@ -16,6 +16,8 @@ export const internalLink = defineType({
       to: [{ type: 'article' }],
       options: {
         disableNew: true,
+        // @ts-expect-error
+        sort: [{ field: 'number', direction: 'asc' }],
       },
     }),
   ],

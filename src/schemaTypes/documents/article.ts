@@ -37,6 +37,10 @@ export const article = defineType({
       name: 'title',
       type: 'reference',
       to: [{ type: 'title' }],
+      options: {
+        // @ts-expect-error
+        sort: [{ field: 'number', direction: 'asc' }],
+      },
       validation: (Rule) => Rule.required(),
       group: 'categorization',
     }),
@@ -47,6 +51,8 @@ export const article = defineType({
       to: [{ type: 'chapter' }],
       group: 'categorization',
       options: {
+        sort: [{ field: 'number', direction: 'asc' }],
+        // @ts-expect-error
         filter: ({ document }) => {
           // @ts-expect-error
           if (!document?.title?._ref) {

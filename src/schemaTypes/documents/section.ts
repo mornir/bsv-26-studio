@@ -18,6 +18,10 @@ export default defineType({
       name: 'title',
       type: 'reference',
       to: [{ type: 'title' }],
+      options: {
+        // @ts-expect-error
+        sort: [{ field: 'number', direction: 'asc' }],
+      },
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -26,6 +30,8 @@ export default defineType({
       type: 'reference',
       to: [{ type: 'chapter' }],
       options: {
+        sort: [{ field: 'number', direction: 'asc' }],
+        // @ts-expect-error
         filter: ({ document }) => {
           // @ts-expect-error
           if (!document?.title?._ref) {
@@ -70,7 +76,11 @@ export default defineType({
     {
       title: 'Nummer',
       name: 'number',
-      by: [{ field: 'number', direction: 'asc' }],
+      by: [
+        { field: 'title.number', direction: 'asc' },
+        { field: 'chapter.number', direction: 'asc' },
+        { field: 'number', direction: 'asc' },
+      ],
     },
   ],
 })

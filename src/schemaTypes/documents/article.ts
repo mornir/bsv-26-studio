@@ -75,6 +75,8 @@ export const article = defineType({
       group: 'categorization',
       to: [{ type: 'section' }],
       options: {
+        sort: [{ field: 'number', direction: 'asc' }],
+        // @ts-expect-error
         filter: ({ document }) => {
           // @ts-expect-error
           if (!document?.title?._ref) {

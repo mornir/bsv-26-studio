@@ -18,6 +18,10 @@ export default defineType({
       name: 'title',
       type: 'reference',
       to: [{ type: 'title' }],
+      options: {
+        // @ts-expect-error
+        sort: [{ field: 'number', direction: 'asc' }],
+      },
       validation: (Rule) => Rule.required(),
     }),
     defineField({

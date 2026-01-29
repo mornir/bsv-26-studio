@@ -38,7 +38,7 @@ export default defineType({
     },
     prepare(selection) {
       const { name, number } = selection
-      return { title: `${number}. Titel: ${name}` }
+      return { title: `${number}. Titel`, subtitle: name }
     },
   },
   orderings: [

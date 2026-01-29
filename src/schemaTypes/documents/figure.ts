@@ -43,7 +43,8 @@ export default defineType({
     prepare(selection) {
       const { name, number, titleNum, media } = selection
       return {
-        title: `Abb. ${titleNum}-${number} ${name}`,
+        title: `Abbildung ${titleNum}-${number}`,
+        subtitle: name,
         media,
       }
     },

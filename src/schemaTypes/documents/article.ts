@@ -164,7 +164,7 @@ export const article = defineType({
     },
     prepare(selection) {
       const { name, number } = selection
-      return { title: `Art. ${number} ${name}` }
+      return { title: `Artikel ${number}`, subtitle: name }
     },
   },
   orderings: [

@@ -33,7 +33,7 @@ export default defineType({
     },
     prepare(selection) {
       const { name, number } = selection
-      return { title: `Anhang ${number}: ${name}` }
+      return { title: `Anhang ${number}`, subtitle: name }
     },
   },
   orderings: [

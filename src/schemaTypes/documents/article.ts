@@ -17,6 +17,15 @@ export const article = defineType({
         return true
       })
       .warning(), */
+  fieldsets: [
+    {
+      name: 'number',
+      title: 'Kennzeichnung',
+      options: {
+        columns: 2,
+      },
+    },
+  ],
   groups: [
     {
       name: 'categorization',
@@ -108,11 +117,24 @@ export const article = defineType({
       },
     }),
     defineField({
-      title: 'Artikelnummer',
+      title: 'Nummer',
       name: 'number',
       type: 'number',
-      validation: (Rule) => Rule.required().integer().positive(),
+      fieldset: 'number',
       group: 'categorization',
+      validation: (Rule) => Rule.required().integer().positive(),
+    }),
+    defineField({
+      title: 'Link',
+      name: 'slug',
+      type: 'slug',
+      fieldset: 'number',
+      group: 'categorization',
+      options: {
+        source: 'number',
+        slugify: (input) => input.toString(),
+      },
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       title: 'Artikeltitel',
@@ -138,7 +160,7 @@ export const article = defineType({
   preview: {
     select: {
       name: 'name.de',
-      number: 'number',
+      number: 'slug.current',
     },
     prepare(selection) {
       const { name, number } = selection

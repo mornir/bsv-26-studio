@@ -9,6 +9,7 @@ import { defineCliConfig } from 'sanity/cli'
 
 const projectId = process.env.SANITY_STUDIO_PROJECT_ID || '<your project ID>'
 const dataset = process.env.SANITY_STUDIO_DATASET || 'production'
+const appId = process.env.SANITY_STUDIO_DATASET || '<your app ID>'
 
 export default defineCliConfig({
   api: {
@@ -16,7 +17,7 @@ export default defineCliConfig({
     dataset,
   },
   studioHost: process.env.SANITY_STUDIO_STUDIO_HOST || '', // Visit https://www.sanity.io/docs/environment-variables to leanr more about using environment variables for local & production.
-  deployment: { autoUpdates: false },
+  deployment: { autoUpdates: false, appId },
   typegen: {
     path: '../digitale-bsv-web/src/sanity/queries.ts', // glob pattern to your typescript files. Can also be an array of paths
     schema: 'schema.json', // path to your schema file, generated with 'sanity schema extract' command

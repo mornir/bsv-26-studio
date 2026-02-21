@@ -16,7 +16,6 @@ export default defineCliConfig({
     projectId,
     dataset,
   },
-  studioHost: process.env.SANITY_STUDIO_STUDIO_HOST || '', // Visit https://www.sanity.io/docs/environment-variables to leanr more about using environment variables for local & production.
   deployment: { autoUpdates: false, appId },
   typegen: {
     path: '../digitale-bsv-web/src/sanity/queries.ts', // glob pattern to your typescript files. Can also be an array of paths

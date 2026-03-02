@@ -6,11 +6,32 @@ export default defineType({
   title: 'Titel',
   type: 'document',
   icon: TbSquareLetterT,
+  fieldsets: [
+    {
+      name: 'number',
+      title: 'Kennzeichnung',
+      options: {
+        columns: 2,
+      },
+    },
+  ],
   fields: [
     defineField({
       title: 'Nummer',
       name: 'number',
       type: 'number',
+      fieldset: 'number',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      title: 'Link',
+      name: 'slug',
+      type: 'slug',
+      fieldset: 'number',
+      options: {
+        source: 'number',
+        slugify: (input) => input.toString(),
+      },
       validation: (Rule) => Rule.required(),
     }),
     defineField({

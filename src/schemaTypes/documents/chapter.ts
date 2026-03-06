@@ -40,7 +40,7 @@ export default defineType({
     prepare(selection) {
       const { name, number, titleNum } = selection
       return {
-        title: `${titleNum}. Titel, ${number}. Kapitel`,
+        title: `${number}. Kapitel (${titleNum}. Titel)`,
         subtitle: name,
       }
     },

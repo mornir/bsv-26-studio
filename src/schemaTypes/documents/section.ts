@@ -67,7 +67,7 @@ export default defineType({
         ? `${titleNum}. Titel, ${chapterNum}. Kapitel`
         : `${titleNum}. Titel`
       return {
-        title: `${refs}, ${number}. Abschnitt`,
+        title: `${number}. Abschnitt (${refs})`,
         subtitle: name,
       }
     },

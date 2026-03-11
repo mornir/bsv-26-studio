@@ -18,9 +18,9 @@ export default defineCliConfig({
   },
   deployment: { autoUpdates: false, appId },
   typegen: {
-    path: '../digitale-bsv-web/src/sanity/queries.ts', // glob pattern to your typescript files. Can also be an array of paths
+    path: '../bsv-26-web/src/sanity/queries.ts', // glob pattern to your typescript files. Can also be an array of paths
     schema: 'schema.json', // path to your schema file, generated with 'sanity schema extract' command
-    generates: '../digitale-bsv-web/src/types/sanity.types.ts', // path to the output file for generated type definitions
+    generates: '../bsv-26-web/src/types/sanity.types.ts', // path to the output file for generated type definitions
     overloadClientMethods: true, // set to false to disable automatic overloading the sanity client
   },
 })

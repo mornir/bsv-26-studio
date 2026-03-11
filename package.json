@@ -1,9 +1,10 @@
 {
-  "name": "digital-bsv-studio",
+  "name": "bsv-26-studio",
   "private": true,
   "version": "1.0.0",
   "main": "package.json",
-  "license": "UNLICENSED",
+  "author": "Jérôme Pott <jeromepott@hotmail.com>",
+  "license": "MIT",
   "scripts": {
     "dev": "sanity dev",
     "start": "sanity start",

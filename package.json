@@ -10,6 +10,7 @@
     "start": "sanity start",
     "build": "sanity build",
     "deploy": "sanity deploy",
+    "login": "sanity login",
     "types": "sanity schema extract --enforce-required-fields && sanity typegen generate"
   },
   "keywords": [

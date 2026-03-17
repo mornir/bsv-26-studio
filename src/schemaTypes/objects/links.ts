@@ -10,8 +10,7 @@ export const internalLink = defineType({
       name: 'reference',
       type: 'reference',
       title: 'Verweis',
-      description:
-        'Verweis auf einen Artikel, ein Kapitel oder einen Abschnitt.',
+      description: 'Verweis auf einen Artikel.',
       validation: (Rule) => Rule.required(),
       to: [{ type: 'article' }],
       options: {

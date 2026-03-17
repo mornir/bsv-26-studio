@@ -45,12 +45,6 @@ export default defineType({
       title: 'Beschreibung',
       type: 'localeSimpleEditor',
     }),
-    defineField({
-      name: 'color',
-      title: 'Farbe',
-      type: 'color',
-      validation: (Rule) => Rule.required(),
-    }),
   ],
   preview: {
     select: {

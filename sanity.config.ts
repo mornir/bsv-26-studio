@@ -5,7 +5,6 @@ import { visionTool } from '@sanity/vision'
 import { schemaTypes } from './src/schemaTypes'
 import { structure } from './structure'
 import { languageFilter } from '@sanity/language-filter'
-import { colorInput } from '@sanity/color-input'
 import { latexInput } from 'sanity-plugin-latex-input'
 
 // Environment variables for project configuration
@@ -26,7 +25,6 @@ export default defineConfig({
     structureTool({ structure }),
     deDELocale(),
     visionTool(),
-    colorInput(),
     latexInput(),
     languageFilter({
       supportedLanguages: [

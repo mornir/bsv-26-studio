@@ -16,7 +16,6 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/color-input": "^6.0.3",
     "@sanity/language-filter": "^4.0.6",
     "@sanity/locale-de-de": "^1.1.28",
     "@sanity/vision": "^5.2.0",

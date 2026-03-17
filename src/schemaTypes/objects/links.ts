@@ -32,7 +32,7 @@ export const externalLink = defineType({
       name: 'href',
       type: 'url',
       description: 'Verweis auf eine externe Website',
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().uri({ allowRelative: true }),
     }),
   ],
 })

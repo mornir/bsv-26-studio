@@ -6,6 +6,7 @@ import { schemaTypes } from './src/schemaTypes'
 import { structure } from './structure'
 import { languageFilter } from '@sanity/language-filter'
 import { latexInput } from 'sanity-plugin-latex-input'
+import { singletonTools } from 'sanity-plugin-singleton-management'
 
 // Environment variables for project configuration
 const projectId = process.env.SANITY_STUDIO_PROJECT_ID || 'your-projectID'
@@ -26,6 +27,7 @@ export default defineConfig({
     deDELocale(),
     visionTool(),
     latexInput(),
+    singletonTools(),
     languageFilter({
       supportedLanguages: [
         { id: 'de', title: 'Deutsch' },

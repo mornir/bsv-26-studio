@@ -19,8 +19,8 @@ export default defineType({
       type: 'string',
       options: {
         list: [
-          { title: 'X', value: 'applies' },
-          { title: '–', value: 'not_applicable' },
+          { title: 'Zutreffend', value: 'applies' },
+          { title: 'Nicht zutreffend', value: 'not_applicable' },
         ],
       },
       validation: (Rule) => Rule.required(),
@@ -31,8 +31,8 @@ export default defineType({
       type: 'string',
       options: {
         list: [
-          { title: 'X', value: 'applies' },
-          { title: '–', value: 'not_applicable' },
+          { title: 'Zutreffend', value: 'applies' },
+          { title: 'Nicht zutreffend', value: 'not_applicable' },
         ],
       },
       validation: (Rule) => Rule.required(),
@@ -43,8 +43,8 @@ export default defineType({
       type: 'string',
       options: {
         list: [
-          { title: 'X', value: 'applies' },
-          { title: '–', value: 'not_applicable' },
+          { title: 'Zutreffend', value: 'applies' },
+          { title: 'Nicht zutreffend', value: 'not_applicable' },
         ],
       },
       validation: (Rule) => Rule.required(),

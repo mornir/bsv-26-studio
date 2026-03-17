@@ -19,8 +19,9 @@ import table from './documents/table'
 import simpleEditor from './objects/simpleEditor'
 
 // Tables
-import usersGroup from './documents/tables/usersGroup'
+import userGroups from './documents/tables/userGroups'
 import measureTarget from './documents/tables/measureTarget'
+import qualifications from './documents/tables/qualifications'
 
 // Export an array of all the schema types.  This is used in the Sanity Studio configuration. https://www.sanity.io/docs/schema-types
 
@@ -31,7 +32,7 @@ export const schemaTypes = [
   faq,
   table,
   figure,
-  usersGroup,
+  userGroups,
   measureTarget,
   appendix,
   localeString,
@@ -45,4 +46,5 @@ export const schemaTypes = [
   chapter,
   section,
   feature,
+  qualifications,
 ]

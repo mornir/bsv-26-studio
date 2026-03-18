@@ -1,9 +1,14 @@
 import { defineType, defineField } from 'sanity'
 
 const nachweisOptions = [
-  { title: 'Selbstdeklaration', value: 'selbstdeklaration' },
-  { title: 'Brandschutzfachmann', value: 'fachmann' },
-  { title: 'Brandschutzexperte', value: 'experte' },
+  { title: 'Selbstdeklaration', value: 'self-declaration' },
+  { title: 'Brandschutzfachmann', value: 'specialist' },
+  { title: 'Brandschutzexperte', value: 'expert' },
+]
+
+const functions = [
+  { title: 'Fachplanung Brandschutz', value: 'fire_safety_engineering' },
+  { title: 'Nachweisführung', value: 'fire_safety_verification_methods' },
 ]
 
 export default defineType({
@@ -21,24 +26,21 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'rows',
-      title: 'Zeilen',
+      name: 'functions',
+      title: 'Funktionen',
       type: 'array',
       of: [
         {
           type: 'object',
-          name: 'row',
-          title: 'Zeile',
+          name: 'function',
+          title: 'Funktion',
           fields: [
             defineField({
               name: 'funktion',
               title: 'Funktion',
               type: 'string',
               options: {
-                list: [
-                  { title: 'Fachplanung Brandschutz', value: 'fachplanung' },
-                  { title: 'Nachweisführung', value: 'nachweisfuerung' },
-                ],
+                list: functions,
               },
             }),
             defineField({
@@ -81,6 +83,10 @@ export default defineType({
           preview: {
             select: {
               title: 'funktion',
+            },
+            prepare(selection) {
+              const { title } = selection
+              return { title: functions.find((f) => f.value === title)?.title }
             },
           },
         },

@@ -13,19 +13,54 @@ export default defineType({
       type: 'localeString',
       validation: (Rule) => Rule.required(),
     }),
-    defineField({
-      title: 'Titel',
-      name: 'title',
-      type: 'reference',
-      to: [{ type: 'title' }],
+    {
+      name: 'source',
+      type: 'string',
+      title: 'Tabellentyp',
+      options: {
+        list: [
+          { title: 'Predefined table', value: 'predefined' },
+          { title: 'Custom HTML table', value: 'html' },
+        ],
+        layout: 'radio',
+      },
+      initialValue: 'predefined',
       validation: (Rule) => Rule.required(),
-    }),
-    defineField({
-      type: 'localeText',
+    },
+    {
+      name: 'tableId',
+      type: 'string',
+      title: 'Table ID',
+      options: {
+        list: [
+          { title: 'Nutzergruppen-Beschreibung', value: 'users_desc' },
+          { title: 'Nutzercharakteristiken', value: 'users_char' },
+        ],
+      },
+      hidden: ({ parent }) => parent?.source !== 'predefined',
+      validation: (Rule) =>
+        Rule.custom((value, context) => {
+          // @ts-expect-error
+          if (context.parent?.source === 'predefined' && !value) {
+            return 'Table ID is required'
+          }
+          return true
+        }),
+    },
+    {
       name: 'html',
-      title: 'Tabelle (HTML-Code)',
-      validation: (Rule) => Rule.required(),
-    }),
+      type: 'localeText',
+      title: 'HTML-Tabelle',
+      hidden: ({ parent }) => parent?.source !== 'html',
+      validation: (Rule) =>
+        Rule.custom((value, context) => {
+          // @ts-expect-error
+          if (context.parent?.source === 'html' && !value) {
+            return 'HTML is required'
+          }
+          return true
+        }),
+    },
   ],
   preview: {
     select: {

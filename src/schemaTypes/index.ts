@@ -1,12 +1,4 @@
-import { internalLink, externalLink } from './objects/links'
-import blockContent from './objects/blockContent'
-import {
-  localeString,
-  localeBlockContent,
-  localeSimpleEditor,
-  localeText,
-  localeImage,
-} from './objects/localizedFields'
+// Documents
 import { article } from './documents/article'
 import title from './documents/title'
 import chapter from './documents/chapter'
@@ -16,10 +8,20 @@ import figure from './documents/figure'
 import faq from './documents/faq'
 import appendix from './documents/appendix'
 import table from './documents/table'
+import usersGroup from './documents/usersGroup'
+// Objects
 import simpleEditor from './objects/simpleEditor'
+import { internalLink, externalLink } from './objects/links'
+import blockContent from './objects/blockContent'
+import {
+  localeString,
+  localeBlockContent,
+  localeSimpleEditor,
+  localeText,
+  localeImage,
+} from './objects/localizedFields'
 
 // Tables
-import userGroups from './documents/tables/userGroups'
 import measureTarget from './documents/tables/measureTarget'
 import qualifications from './documents/tables/qualifications'
 
@@ -29,10 +31,10 @@ export const schemaTypes = [
   internalLink,
   externalLink,
   article,
+  usersGroup,
   faq,
   table,
   figure,
-  userGroups,
   measureTarget,
   appendix,
   localeString,

@@ -7,14 +7,12 @@ export const structure: StructureResolver = (S, context) =>
     .title('Inhalt')
     .items([
       S.documentTypeListItem('article').title('Artikel'),
-      S.documentTypeListItem('title').title('Titel'),
-      S.documentTypeListItem('chapter').title('Kapitel'),
-      S.documentTypeListItem('section').title('Abschnitte'),
-      S.divider(),
       S.documentTypeListItem('appendix').title('Anhänge'),
       S.documentTypeListItem('figure').title('Abbildungen'),
+      S.documentTypeListItem('table').title('Tabellen'),
       S.documentTypeListItem('faq').title('Anfragen'),
-      S.divider().title('Tabellen'),
+      S.divider(),
+      S.documentTypeListItem('usersGroup').title('Nutzergruppen'),
       S.documentTypeListItem('measureTarget').title('Massnahmen - Schutzgüter'),
       singletonDocumentListItem({
         S,
@@ -24,15 +22,10 @@ export const structure: StructureResolver = (S, context) =>
         id: 'qualifications',
         icon: TbCertificate,
       }),
-      singletonDocumentListItem({
-        S,
-        context,
-        type: 'userGroups',
-        title: 'Nutzergruppen',
-        id: 'userGroups',
-        icon: TbUsersGroup,
-      }),
-      S.documentTypeListItem('table').title('HTML-Tabellen'),
+      S.divider(),
+      S.documentTypeListItem('title').title('Titel'),
+      S.documentTypeListItem('chapter').title('Kapitel'),
+      S.documentTypeListItem('section').title('Abschnitte'),
       S.divider(),
       S.documentTypeListItem('feature').title('Features'),
     ])

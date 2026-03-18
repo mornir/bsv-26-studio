@@ -1,5 +1,260 @@
 [
   {
+    "name": "qualifications",
+    "type": "document",
+    "attributes": {
+      "_id": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        }
+      },
+      "_type": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string",
+          "value": "qualifications"
+        }
+      },
+      "_createdAt": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        }
+      },
+      "_updatedAt": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        }
+      },
+      "_rev": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        }
+      },
+      "name": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "inline",
+          "name": "localeString"
+        },
+        "optional": false
+      },
+      "functions": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "array",
+          "of": {
+            "type": "object",
+            "attributes": {
+              "funktion": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "union",
+                  "of": [
+                    {
+                      "type": "string",
+                      "value": "fire_safety_engineering"
+                    },
+                    {
+                      "type": "string",
+                      "value": "fire_safety_verification_methods"
+                    }
+                  ]
+                },
+                "optional": true
+              },
+              "vk1": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "union",
+                  "of": [
+                    {
+                      "type": "string",
+                      "value": "self-declaration"
+                    },
+                    {
+                      "type": "string",
+                      "value": "specialist"
+                    },
+                    {
+                      "type": "string",
+                      "value": "expert"
+                    }
+                  ]
+                },
+                "optional": true
+              },
+              "vk2": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "union",
+                  "of": [
+                    {
+                      "type": "string",
+                      "value": "self-declaration"
+                    },
+                    {
+                      "type": "string",
+                      "value": "specialist"
+                    },
+                    {
+                      "type": "string",
+                      "value": "expert"
+                    }
+                  ]
+                },
+                "optional": true
+              },
+              "vk3": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "union",
+                  "of": [
+                    {
+                      "type": "string",
+                      "value": "self-declaration"
+                    },
+                    {
+                      "type": "string",
+                      "value": "specialist"
+                    },
+                    {
+                      "type": "string",
+                      "value": "expert"
+                    }
+                  ]
+                },
+                "optional": true
+              },
+              "vk4": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "union",
+                  "of": [
+                    {
+                      "type": "string",
+                      "value": "self-declaration"
+                    },
+                    {
+                      "type": "string",
+                      "value": "specialist"
+                    },
+                    {
+                      "type": "string",
+                      "value": "expert"
+                    }
+                  ]
+                },
+                "optional": true
+              },
+              "rechnerischerNachweis": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "union",
+                  "of": [
+                    {
+                      "type": "string",
+                      "value": "self-declaration"
+                    },
+                    {
+                      "type": "string",
+                      "value": "specialist"
+                    },
+                    {
+                      "type": "string",
+                      "value": "expert"
+                    }
+                  ]
+                },
+                "optional": true
+              },
+              "leistungsbasiert": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "union",
+                  "of": [
+                    {
+                      "type": "string",
+                      "value": "self-declaration"
+                    },
+                    {
+                      "type": "string",
+                      "value": "specialist"
+                    },
+                    {
+                      "type": "string",
+                      "value": "expert"
+                    }
+                  ]
+                },
+                "optional": true
+              },
+              "_type": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "string",
+                  "value": "function"
+                }
+              }
+            },
+            "rest": {
+              "type": "object",
+              "attributes": {
+                "_key": {
+                  "type": "objectAttribute",
+                  "value": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "optional": true
+      }
+    }
+  },
+  {
+    "name": "localeString",
+    "type": "type",
+    "value": {
+      "type": "object",
+      "attributes": {
+        "_type": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string",
+            "value": "localeString"
+          }
+        },
+        "de": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string"
+          },
+          "optional": false
+        },
+        "fr": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string"
+          },
+          "optional": true
+        },
+        "it": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string"
+          },
+          "optional": true
+        }
+      }
+    }
+  },
+  {
     "name": "feature",
     "type": "document",
     "attributes": {
@@ -49,43 +304,6 @@
           "name": "localeString"
         },
         "optional": false
-      }
-    }
-  },
-  {
-    "name": "localeString",
-    "type": "type",
-    "value": {
-      "type": "object",
-      "attributes": {
-        "_type": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "string",
-            "value": "localeString"
-          }
-        },
-        "de": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "string"
-          },
-          "optional": false
-        },
-        "fr": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "string"
-          },
-          "optional": true
-        },
-        "it": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "string"
-          },
-          "optional": true
-        }
       }
     }
   },
@@ -1035,7 +1253,7 @@
     }
   },
   {
-    "name": "userGroup",
+    "name": "userGroups",
     "type": "document",
     "attributes": {
       "_id": {
@@ -1048,7 +1266,7 @@
         "type": "objectAttribute",
         "value": {
           "type": "string",
-          "value": "userGroup"
+          "value": "userGroups"
         }
       },
       "_createdAt": {
@@ -1069,97 +1287,173 @@
           "type": "string"
         }
       },
-      "userGroup": {
+      "name": {
         "type": "objectAttribute",
         "value": {
-          "type": "string"
+          "type": "inline",
+          "name": "localeString"
         },
         "optional": false
       },
-      "attention": {
+      "rows": {
         "type": "objectAttribute",
         "value": {
-          "type": "union",
-          "of": [
-            {
-              "type": "string",
-              "value": "yes"
+          "type": "array",
+          "of": {
+            "type": "object",
+            "attributes": {
+              "userGroup": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "union",
+                  "of": [
+                    {
+                      "type": "string",
+                      "value": "A"
+                    },
+                    {
+                      "type": "string",
+                      "value": "B"
+                    },
+                    {
+                      "type": "string",
+                      "value": "C"
+                    },
+                    {
+                      "type": "string",
+                      "value": "D"
+                    },
+                    {
+                      "type": "string",
+                      "value": "E"
+                    },
+                    {
+                      "type": "string",
+                      "value": "F"
+                    },
+                    {
+                      "type": "string",
+                      "value": "G"
+                    },
+                    {
+                      "type": "string",
+                      "value": "H"
+                    },
+                    {
+                      "type": "string",
+                      "value": "I"
+                    }
+                  ]
+                },
+                "optional": false
+              },
+              "attention": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "union",
+                  "of": [
+                    {
+                      "type": "string",
+                      "value": "yes"
+                    },
+                    {
+                      "type": "string",
+                      "value": "no"
+                    }
+                  ]
+                },
+                "optional": false
+              },
+              "reactionCapability": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "union",
+                  "of": [
+                    {
+                      "type": "string",
+                      "value": "fast"
+                    },
+                    {
+                      "type": "string",
+                      "value": "slow"
+                    }
+                  ]
+                },
+                "optional": false
+              },
+              "familiarity": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "union",
+                  "of": [
+                    {
+                      "type": "string",
+                      "value": "yes"
+                    },
+                    {
+                      "type": "string",
+                      "value": "no"
+                    }
+                  ]
+                },
+                "optional": false
+              },
+              "escapeCapability": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "union",
+                  "of": [
+                    {
+                      "type": "string",
+                      "value": "yes"
+                    },
+                    {
+                      "type": "string",
+                      "value": "no"
+                    }
+                  ]
+                },
+                "optional": false
+              },
+              "walkingSpeed": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "union",
+                  "of": [
+                    {
+                      "type": "string",
+                      "value": "fast"
+                    },
+                    {
+                      "type": "string",
+                      "value": "slow"
+                    }
+                  ]
+                },
+                "optional": false
+              },
+              "_type": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "string",
+                  "value": "row"
+                }
+              }
             },
-            {
-              "type": "string",
-              "value": "no"
+            "rest": {
+              "type": "object",
+              "attributes": {
+                "_key": {
+                  "type": "objectAttribute",
+                  "value": {
+                    "type": "string"
+                  }
+                }
+              }
             }
-          ]
+          }
         },
-        "optional": false
-      },
-      "reactionCapability": {
-        "type": "objectAttribute",
-        "value": {
-          "type": "union",
-          "of": [
-            {
-              "type": "string",
-              "value": "fast"
-            },
-            {
-              "type": "string",
-              "value": "slow"
-            }
-          ]
-        },
-        "optional": false
-      },
-      "familiarity": {
-        "type": "objectAttribute",
-        "value": {
-          "type": "union",
-          "of": [
-            {
-              "type": "string",
-              "value": "yes"
-            },
-            {
-              "type": "string",
-              "value": "no"
-            }
-          ]
-        },
-        "optional": false
-      },
-      "escapeCapability": {
-        "type": "objectAttribute",
-        "value": {
-          "type": "union",
-          "of": [
-            {
-              "type": "string",
-              "value": "yes"
-            },
-            {
-              "type": "string",
-              "value": "no"
-            }
-          ]
-        },
-        "optional": false
-      },
-      "walkingSpeed": {
-        "type": "objectAttribute",
-        "value": {
-          "type": "union",
-          "of": [
-            {
-              "type": "string",
-              "value": "fast"
-            },
-            {
-              "type": "string",
-              "value": "slow"
-            }
-          ]
-        },
-        "optional": false
+        "optional": true
       }
     }
   },
@@ -1885,68 +2179,6 @@
           "name": "localeSimpleEditor"
         },
         "optional": true
-      },
-      "color": {
-        "type": "objectAttribute",
-        "value": {
-          "type": "inline",
-          "name": "color"
-        },
-        "optional": false
-      }
-    }
-  },
-  {
-    "name": "color",
-    "type": "type",
-    "value": {
-      "type": "object",
-      "attributes": {
-        "_type": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "string",
-            "value": "color"
-          }
-        },
-        "hex": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "string"
-          },
-          "optional": true
-        },
-        "alpha": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "number"
-          },
-          "optional": true
-        },
-        "hsl": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "inline",
-            "name": "hslaColor"
-          },
-          "optional": true
-        },
-        "hsv": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "inline",
-            "name": "hsvaColor"
-          },
-          "optional": true
-        },
-        "rgb": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "inline",
-            "name": "rgbaColor"
-          },
-          "optional": true
-        }
       }
     }
   },
@@ -1967,138 +2199,6 @@
           "type": "objectAttribute",
           "value": {
             "type": "string"
-          },
-          "optional": true
-        }
-      }
-    }
-  },
-  {
-    "name": "rgbaColor",
-    "type": "type",
-    "value": {
-      "type": "object",
-      "attributes": {
-        "_type": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "string",
-            "value": "rgbaColor"
-          }
-        },
-        "r": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "number"
-          },
-          "optional": true
-        },
-        "g": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "number"
-          },
-          "optional": true
-        },
-        "b": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "number"
-          },
-          "optional": true
-        },
-        "a": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "number"
-          },
-          "optional": true
-        }
-      }
-    }
-  },
-  {
-    "name": "hsvaColor",
-    "type": "type",
-    "value": {
-      "type": "object",
-      "attributes": {
-        "_type": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "string",
-            "value": "hsvaColor"
-          }
-        },
-        "h": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "number"
-          },
-          "optional": true
-        },
-        "s": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "number"
-          },
-          "optional": true
-        },
-        "v": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "number"
-          },
-          "optional": true
-        },
-        "a": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "number"
-          },
-          "optional": true
-        }
-      }
-    }
-  },
-  {
-    "name": "hslaColor",
-    "type": "type",
-    "value": {
-      "type": "object",
-      "attributes": {
-        "_type": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "string",
-            "value": "hslaColor"
-          }
-        },
-        "h": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "number"
-          },
-          "optional": true
-        },
-        "s": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "number"
-          },
-          "optional": true
-        },
-        "l": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "number"
-          },
-          "optional": true
-        },
-        "a": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "number"
           },
           "optional": true
         }

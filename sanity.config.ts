@@ -34,7 +34,7 @@ export default defineConfig({
         { id: 'fr', title: 'Französisch' },
         { id: 'it', title: 'Italienisch' },
       ],
-      documentTypes: ['article', 'title', 'appendix'],
+      documentTypes: ['article', 'title', 'appendix', 'usersGroup'],
     }),
   ],
   schema: {

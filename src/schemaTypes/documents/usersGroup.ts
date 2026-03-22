@@ -20,6 +20,7 @@ const groups = letters
 const risk = [
   { title: 'Niedrig', value: 'low' },
   { title: 'Mittlere', value: 'moderate' },
+  { title: 'Erhöht', value: 'elevated' },
   { title: 'Hoch', value: 'high' },
   { title: 'Sehr Hoch', value: 'very_high' },
 ]
@@ -114,10 +115,12 @@ export default defineType({
   preview: {
     select: {
       title: 'designation',
+      subtitle: 'examples.de',
     },
-    prepare({ title }) {
+    prepare({ title, subtitle }) {
       return {
         title: `Nutzergruppe ${title}`,
+        subtitle,
       }
     },
   },

@@ -1,6 +1,12 @@
 import { defineField, defineType } from 'sanity'
 import { TbTable } from 'react-icons/tb'
 
+const predefinedTables = [
+  { title: 'Nutzergruppen-Beschreibung', value: 'users_desc' },
+  { title: 'Nutzercharakteristiken', value: 'users_char' },
+  { title: 'Nutzergruppen-Beispiele', value: 'users_examples' },
+]
+
 export default defineType({
   name: 'table',
   title: 'Tabelle',
@@ -32,10 +38,7 @@ export default defineType({
       type: 'string',
       title: 'Table ID',
       options: {
-        list: [
-          { title: 'Nutzergruppen-Beschreibung', value: 'users_desc' },
-          { title: 'Nutzercharakteristiken', value: 'users_char' },
-        ],
+        list: predefinedTables,
       },
       hidden: ({ parent }) => parent?.source !== 'predefined',
       validation: (Rule) =>

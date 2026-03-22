@@ -46,7 +46,7 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'risk',
+      name: 'riskLevel',
       title: 'Gefährdung',
       type: 'string',
       options: {

@@ -1,5 +1,5 @@
 import { singletonDocumentListItem } from 'sanity-plugin-singleton-management'
-import { TbCertificate, TbUsersGroup } from 'react-icons/tb'
+import { TbCertificate } from 'react-icons/tb'
 
 import type { StructureResolver } from 'sanity/structure'
 export const structure: StructureResolver = (S, context) =>
@@ -26,6 +26,4 @@ export const structure: StructureResolver = (S, context) =>
       S.documentTypeListItem('title').title('Titel'),
       S.documentTypeListItem('chapter').title('Kapitel'),
       S.documentTypeListItem('section').title('Abschnitte'),
-      S.divider(),
-      S.documentTypeListItem('feature').title('Features'),
     ])

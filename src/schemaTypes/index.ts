@@ -3,7 +3,6 @@ import { article } from './documents/article'
 import title from './documents/title'
 import chapter from './documents/chapter'
 import section from './documents/section'
-import feature from './documents/feature'
 import figure from './documents/figure'
 import faq from './documents/faq'
 import appendix from './documents/appendix'
@@ -47,6 +46,5 @@ export const schemaTypes = [
   title,
   chapter,
   section,
-  feature,
   qualifications,
 ]

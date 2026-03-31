@@ -17,6 +17,7 @@
     "sanity"
   ],
   "dependencies": {
+    "@sanity/agent-context": "^0.3.5",
     "@sanity/language-filter": "^4.1.0",
     "@sanity/locale-de-de": "^1.1.30",
     "@sanity/vision": "^5.17.1",

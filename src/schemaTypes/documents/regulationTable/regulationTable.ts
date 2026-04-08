@@ -9,7 +9,7 @@ export default defineType({
   fields: [
     defineField({ name: 'name', type: 'string', title: 'Tabellenname' }),
     defineField({
-      name: 'desc',
+      name: 'description',
       type: 'localeString',
       title: 'Anforderungsbeschreibung',
       description:

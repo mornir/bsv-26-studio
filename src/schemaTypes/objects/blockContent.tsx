@@ -25,6 +25,7 @@ export default defineType({
             { type: 'table' },
             { type: 'measureTarget' },
             { type: 'qualifications' },
+            { type: 'regulationTable' },
           ],
           icon: TbTableFilled,
         }),

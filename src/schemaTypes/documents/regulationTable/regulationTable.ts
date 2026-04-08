@@ -7,17 +7,21 @@ export default defineType({
   type: 'document',
   icon: TbHomeCheck,
   fields: [
-    { name: 'title', type: 'string', title: 'Tabellenname' },
+    defineField({ name: 'name', type: 'string', title: 'Tabellenname' }),
     defineField({
       name: 'desc',
       type: 'localeString',
       title: 'Anforderungsbeschreibung',
+      description:
+        'z.B. Kriterium für die notwendige Feuerwiderstandsdauer der Brandabschnittsbildung',
     }),
     defineField({
       name: 'requirements',
       title: 'Mögliche Anforderungen',
       type: 'array',
       options: { disableActions: ['duplicate'] },
+      description:
+        'z.B. Rauchverbot, sicherheitsbeleuchtete Kennzeichnung, etc. Aber keine Brandverhaltensgruppen! Falls keine, leer lassen.',
       of: [
         {
           name: 'requirement',
@@ -28,8 +32,6 @@ export default defineType({
               name: 'name',
               type: 'localeString',
               title: 'Anforderungsname',
-              description:
-                'z.B. Rauchverbot, sicherheitsbeleuchtete Kennzeichnung, etc. Aber keine Brandverhaltensgruppen!',
             },
           ],
           preview: {
@@ -40,11 +42,16 @@ export default defineType({
         },
       ],
     }),
-    {
+    defineField({
       name: 'rows',
       title: 'Zeilen',
       type: 'array',
       of: [{ type: 'regulationRow' }],
-    },
+    }),
   ],
+  preview: {
+    select: {
+      title: 'name',
+    },
+  },
 })

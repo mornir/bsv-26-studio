@@ -26,8 +26,7 @@ export default defineType({
     defineField({
       name: 'systemProperty',
       title: 'Systemeigenschaft',
-      type: 'array',
-      of: [{ type: 'block' }],
+      type: 'localeSimpleEditor',
     }),
     defineField({
       name: 'people',
@@ -70,8 +69,8 @@ export default defineType({
                   return (document.requirements || []).map(
                     (requirement: any) => {
                       return {
-                        title: requirement.name.de,
-                        value: requirement.value,
+                        title: requirement?.name?.de || 'Error: Missing Title',
+                        value: requirement?.value || 'Error: Missing Value',
                       }
                     },
                   )

@@ -5,6 +5,7 @@ import {
   TbPhoto,
   TbSuperscript,
   TbSubscript,
+  TbHomeCheck,
 } from 'react-icons/tb'
 
 export default defineType({
@@ -21,13 +22,15 @@ export default defineType({
           name: 'table',
           title: 'Tabelle',
           type: 'reference',
-          to: [
-            { type: 'table' },
-            { type: 'measureTarget' },
-            { type: 'qualifications' },
-            { type: 'regulationTable' },
-          ],
+          to: [{ type: 'table' }],
           icon: TbTableFilled,
+        }),
+        defineArrayMember({
+          name: 'regulationTable',
+          title: 'Anforderungstabelle',
+          type: 'reference',
+          to: [{ type: 'regulationTable' }],
+          icon: TbHomeCheck,
         }),
       ],
       // Styles let you set what your user can mark up blocks with. These
@@ -81,6 +84,6 @@ export default defineType({
         ],
       },
     }),
-    defineArrayMember({ type: 'latex', icon: TbMath, title: 'Math block' }),
+    /* defineArrayMember({ type: 'latex', icon: TbMath, title: 'Math block' }), */
   ],
 })

@@ -14,7 +14,9 @@ export const structure: StructureResolver = (S, context) =>
       S.documentTypeListItem('faq').title('Anfragen'),
       S.divider(),
       S.documentTypeListItem('usersGroup').title('Nutzergruppen'),
+      S.documentTypeListItem('regulationTable').title('Anforderungstabellen'),
       S.documentTypeListItem('measureTarget').title('Massnahmen - Schutzgüter'),
+      S.documentTypeListItem('system').title('Systeme'),
       singletonDocumentListItem({
         S,
         context,

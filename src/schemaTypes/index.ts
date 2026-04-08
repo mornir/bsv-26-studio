@@ -7,11 +7,14 @@ import figure from './documents/figure'
 import faq from './documents/faq'
 import appendix from './documents/appendix'
 import table from './documents/table'
+import system from './documents/system'
 import usersGroup from './documents/usersGroup'
+import regulationTable from './documents/regulationTable/regulationTable'
 // Objects
 import simpleEditor from './objects/simpleEditor'
 import { internalLink, externalLink } from './objects/links'
 import blockContent from './objects/blockContent'
+import regulationRow from './documents/regulationTable/regulationTableRow'
 import {
   localeString,
   localeBlockContent,
@@ -31,6 +34,9 @@ export const schemaTypes = [
   externalLink,
   article,
   usersGroup,
+  system,
+  regulationTable,
+  regulationRow,
   faq,
   table,
   figure,

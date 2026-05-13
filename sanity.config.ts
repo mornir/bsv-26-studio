@@ -46,7 +46,7 @@ export default defineConfig({
     dashboardTool({
       widgets: [
         netlifyWidget({
-          title: 'Veröffentlichen',
+          title: 'Rebuild website',
           sites: [netlifyWebsite],
         }),
         projectInfoWidget(),

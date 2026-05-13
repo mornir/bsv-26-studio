@@ -21,8 +21,8 @@ const dataset = process.env.SANITY_STUDIO_DATASET || 'production'
 const auth_endpoint = process.env.SANITY_STUDIO_AUTH_ENDPOINT || ''
 
 // Netlify config
-const apiId = process.env.NETLIFY_SITE_ID || ''
-const buildHookId = process.env.NETLIFY_BUILD_HOOK_ID || ''
+const apiId = process.env.SANITY_STUDIO_NETLIFY_SITE_ID || ''
+const buildHookId = process.env.SANITY_STUDIO_NETLIFY_BUILD_HOOK_ID || ''
 const netlifyWebsite = {
   title: 'html.bsvonline.ch',
   apiId,

@@ -1,4 +1,10 @@
 import { defineConfig } from 'sanity'
+import {
+  dashboardTool,
+  projectUsersWidget,
+  projectInfoWidget,
+} from '@sanity/dashboard'
+import { netlifyWidget } from 'sanity-plugin-dashboard-widget-netlify'
 import { structureTool } from 'sanity/structure'
 import { deDELocale } from '@sanity/locale-de-de'
 import { visionTool } from '@sanity/vision'
@@ -14,6 +20,17 @@ const projectId = process.env.SANITY_STUDIO_PROJECT_ID || 'your-projectID'
 const dataset = process.env.SANITY_STUDIO_DATASET || 'production'
 const auth_endpoint = process.env.SANITY_STUDIO_AUTH_ENDPOINT || ''
 
+// Netlify config
+const apiId = process.env.NETLIFY_SITE_ID || ''
+const buildHookId = process.env.NETLIFY_BUILD_HOOK_ID || ''
+const netlifyWebsite = {
+  title: 'html.bsvonline.ch',
+  apiId,
+  buildHookId,
+  name: 'bsv26',
+  url: 'https://bsv.terminofeu.ch',
+}
+
 export default defineConfig({
   title: 'BSV 2026',
   projectId,
@@ -26,6 +43,16 @@ export default defineConfig({
   },
   plugins: [
     structureTool({ structure }),
+    dashboardTool({
+      widgets: [
+        netlifyWidget({
+          title: 'Veröffentlichen',
+          sites: [netlifyWebsite],
+        }),
+        projectInfoWidget(),
+        projectUsersWidget(),
+      ],
+    }),
     deDELocale(),
     visionTool(),
     latexInput(),

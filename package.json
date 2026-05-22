@@ -42,5 +42,6 @@
   "prettier": {
     "semi": false,
     "singleQuote": true
-  }
+  },
+  "packageManager": "pnpm@11.2.2"
 }

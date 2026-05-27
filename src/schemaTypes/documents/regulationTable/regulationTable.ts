@@ -7,7 +7,15 @@ export default defineType({
   type: 'document',
   icon: TbHomeCheck,
   fields: [
-    defineField({ name: 'name', type: 'string', title: 'Tabellenname' }),
+    defineField({
+      name: 'article',
+      title: 'Artikel',
+      type: 'reference',
+      to: [{ type: 'article' }],
+      description:
+        'Verweis auf den zugehörigen Artikel, der diese Tabelle definiert.',
+    }),
+    defineField({ name: 'name', type: 'localeString', title: 'Tabellenname' }),
     defineField({
       name: 'description',
       type: 'localeString',
@@ -51,7 +59,7 @@ export default defineType({
   ],
   preview: {
     select: {
-      title: 'name',
+      title: 'name.de',
     },
   },
 })

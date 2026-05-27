@@ -15,6 +15,7 @@ import simpleEditor from './objects/simpleEditor'
 import { internalLink, externalLink } from './objects/links'
 import blockContent from './objects/blockContent'
 import regulationRow from './documents/regulationTable/regulationTableRow'
+import fireReactionRow from './documents/tables/fireReactionRow'
 import {
   localeString,
   localeBlockContent,
@@ -26,6 +27,7 @@ import {
 // Tables
 import measureTarget from './documents/tables/measureTarget'
 import qualifications from './documents/tables/qualifications'
+import fireReactionTable from './documents/tables/fireReactionTable'
 
 // Export an array of all the schema types.  This is used in the Sanity Studio configuration. https://www.sanity.io/docs/schema-types
 
@@ -37,6 +39,7 @@ export const schemaTypes = [
   system,
   regulationTable,
   regulationRow,
+  fireReactionRow,
   faq,
   table,
   figure,
@@ -53,4 +56,5 @@ export const schemaTypes = [
   chapter,
   section,
   qualifications,
+  fireReactionTable,
 ]

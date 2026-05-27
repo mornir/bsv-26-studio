@@ -15,16 +15,16 @@ export default defineType({
       lists: [],
       marks: {
         decorators: [
-          { title: 'Strong', value: 'strong' },
-          { title: 'Emphasis', value: 'em' },
+          { title: 'Fett', value: 'strong' },
+          { title: 'Kursiv', value: 'em' },
           {
-            title: 'Superscript',
+            title: 'Hochgestellt',
             value: 'sup',
             icon: TbSuperscript,
             component: ({ children }) => <sup>{children}</sup>,
           },
           {
-            title: 'Subscript',
+            title: 'Tiefgestellt',
             value: 'sub',
             icon: TbSubscript,
             component: ({ children }) => <sub>{children}</sub>,

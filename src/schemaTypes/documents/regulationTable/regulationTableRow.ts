@@ -70,7 +70,7 @@ export default defineType({
                     (requirement: any) => {
                       return {
                         title: requirement?.name?.de || 'Error: Missing Title',
-                        value: requirement?.value || 'Error: Missing Value',
+                        value: requirement?.name?.de || 'Error: Missing Value',
                       }
                     },
                   )

@@ -62,54 +62,71 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'attention',
-      title: 'Aufmerksamkeit',
-      type: 'string',
+      name: 'characteristics',
+      title: 'Charakteristiken',
+      description:
+        'Nutzercharakteristiken im Hinblick auf Verhalten und Fähigkeiten im Brandfall.',
+      type: 'object',
       options: {
-        list: boolean,
-        layout: 'radio',
+        columns: 2,
       },
       validation: (Rule) => Rule.required(),
-    }),
-    defineField({
-      name: 'reactionCapability',
-      title: 'Reaktionsfähigkeit',
-      type: 'string',
-      options: {
-        list: speed,
-        layout: 'radio',
-      },
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
-      name: 'familiarity',
-      title: 'Vertrautheit',
-      type: 'string',
-      options: {
-        list: boolean,
-        layout: 'radio',
-      },
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
-      name: 'escapeCapability',
-      title: 'Fluchtfähigkeit',
-      type: 'string',
-      options: {
-        list: boolean,
-        layout: 'radio',
-      },
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
-      name: 'walkingSpeed',
-      title: 'Gehgeschwindigkeit',
-      type: 'string',
-      options: {
-        list: speed,
-        layout: 'radio',
-      },
-      validation: (Rule) => Rule.required(),
+      fields: [
+        defineField({
+          name: 'attention',
+          title: 'Aufmerksamkeit',
+          type: 'string',
+          options: {
+            list: boolean,
+            layout: 'radio',
+          },
+          validation: (Rule) => Rule.required(),
+        }),
+
+        defineField({
+          name: 'reactionCapability',
+          title: 'Reaktionsfähigkeit',
+          type: 'string',
+          options: {
+            list: speed,
+            layout: 'radio',
+          },
+          validation: (Rule) => Rule.required(),
+        }),
+
+        defineField({
+          name: 'familiarity',
+          title: 'Vertrautheit',
+          type: 'string',
+          options: {
+            list: boolean,
+            layout: 'radio',
+          },
+          validation: (Rule) => Rule.required(),
+        }),
+
+        defineField({
+          name: 'escapeCapability',
+          title: 'Fluchtfähigkeit',
+          type: 'string',
+          options: {
+            list: boolean,
+            layout: 'radio',
+          },
+          validation: (Rule) => Rule.required(),
+        }),
+
+        defineField({
+          name: 'walkingSpeed',
+          title: 'Gehgeschwindigkeit',
+          type: 'string',
+          options: {
+            list: speed,
+            layout: 'radio',
+          },
+          validation: (Rule) => Rule.required(),
+        }),
+      ],
     }),
   ],
   preview: {

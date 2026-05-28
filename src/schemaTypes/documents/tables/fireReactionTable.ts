@@ -1,9 +1,11 @@
 import { defineField, defineType } from 'sanity'
+import { BrickWallFire } from 'lucide-react'
 
 export default defineType({
   name: 'fireReactionTable',
   title: 'Brandverhalten',
   type: 'document',
+  icon: BrickWallFire,
   fields: [
     defineField({
       name: 'article',

@@ -1,11 +1,12 @@
 import { defineField, defineType } from 'sanity'
 import { TbPaperclip } from 'react-icons/tb'
+import { Paperclip } from 'lucide-react'
 
 export default defineType({
   name: 'appendix',
   title: 'Anhang',
   type: 'document',
-  icon: TbPaperclip,
+  icon: Paperclip,
   fieldsets: [
     {
       name: 'number',

@@ -1,11 +1,12 @@
 import { defineField, defineType } from 'sanity'
 import { TbSectionSign } from 'react-icons/tb'
+import { Section } from 'lucide-react'
 
 export const article = defineType({
   name: 'article',
   title: 'Artikel',
   type: 'document',
-  icon: TbSectionSign,
+  icon: Section,
   /*   validation: (rule) =>
     rule
       .custom((fields) => {

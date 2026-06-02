@@ -9,13 +9,13 @@ import appendix from './documents/appendix'
 import table from './documents/table'
 import system from './documents/system'
 import usersGroup from './documents/usersGroup'
-import regulationTable from './documents/regulationTable/regulationTable'
+import regulationTable from './documents/tables/regulationTable/regulationTable'
 // Objects
 import simpleEditor from './objects/simpleEditor'
 import { internalLink, externalLink } from './objects/links'
 import blockContent from './objects/blockContent'
-import regulationRow from './documents/regulationTable/regulationTableRow'
-import fireReactionRow from './documents/tables/fireReactionRow'
+import regulationRow from './documents/tables/regulationTable/regulationTableRow'
+import fireReactionRow from './documents/tables/fireReaction/fireReactionRow'
 import {
   localeString,
   localeBlockContent,
@@ -28,7 +28,7 @@ import {
 import { protectedAssets } from './documents/tables/common'
 import measureTarget from './documents/tables/measureTarget'
 import qualifications from './documents/tables/qualifications'
-import fireReactionTable from './documents/tables/fireReactionTable'
+import fireReactionTable from './documents/tables/fireReaction/fireReactionTable'
 
 // Export an array of all the schema types.  This is used in the Sanity Studio configuration. https://www.sanity.io/docs/schema-types
 

@@ -25,6 +25,7 @@ import {
 } from './objects/localizedFields'
 
 // Tables
+import { protectedAssets } from './documents/tables/common'
 import measureTarget from './documents/tables/measureTarget'
 import qualifications from './documents/tables/qualifications'
 import fireReactionTable from './documents/tables/fireReactionTable'
@@ -34,6 +35,7 @@ import fireReactionTable from './documents/tables/fireReactionTable'
 export const schemaTypes = [
   internalLink,
   externalLink,
+  protectedAssets,
   article,
   usersGroup,
   system,

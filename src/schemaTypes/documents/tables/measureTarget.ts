@@ -14,40 +14,9 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'peopleInBuilding',
-      title: 'Personen im Gebäude',
-      type: 'string',
-      options: {
-        list: [
-          { title: 'Zutreffend', value: 'applies' },
-          { title: 'Nicht zutreffend', value: 'not_applicable' },
-        ],
-      },
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
-      name: 'interventionForces',
-      title: 'Interventionskräfte',
-      type: 'string',
-      options: {
-        list: [
-          { title: 'Zutreffend', value: 'applies' },
-          { title: 'Nicht zutreffend', value: 'not_applicable' },
-        ],
-      },
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
-      name: 'buildingsAndFacilities',
-      title: 'Bauten und Anlagen',
-      type: 'string',
-      options: {
-        list: [
-          { title: 'Zutreffend', value: 'applies' },
-          { title: 'Nicht zutreffend', value: 'not_applicable' },
-        ],
-      },
-      validation: (Rule) => Rule.required(),
+      name: 'protectedAssets',
+      title: 'Schutzgüter',
+      type: 'protectedAssets',
     }),
   ],
   preview: {

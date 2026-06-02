@@ -6,15 +6,6 @@ export default defineType({
   type: 'object',
   name: 'regulationRow',
   title: 'Anforderung Zeile',
-  fieldsets: [
-    {
-      name: 'protectedAssets',
-      title: 'Schutzgüter',
-      options: {
-        columns: 3,
-      },
-    },
-  ],
   fields: [
     defineField({ name: 'letter', type: 'string', title: 'Buchstabe' }),
     defineField({
@@ -29,22 +20,9 @@ export default defineType({
       type: 'localeSimpleEditor',
     }),
     defineField({
-      name: 'people',
-      type: 'boolean',
-      title: 'Personen',
-      fieldset: 'protectedAssets',
-    }),
-    defineField({
-      name: 'firefighters',
-      type: 'boolean',
-      title: 'Interventionskräfte',
-      fieldset: 'protectedAssets',
-    }),
-    defineField({
-      name: 'buildings',
-      type: 'boolean',
-      title: 'Gebäude',
-      fieldset: 'protectedAssets',
+      name: 'protectedAssets',
+      title: 'Schutzgüter',
+      type: 'protectedAssets',
     }),
     {
       name: 'requirements',

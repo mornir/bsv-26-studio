@@ -3,7 +3,7 @@ import { TbShield } from 'react-icons/tb'
 
 export default defineType({
   name: 'measureTarget',
-  title: 'Massnahme – Schutzgüter',
+  title: 'Schutzgüter nach Massnahmen',
   type: 'document',
   icon: TbShield,
   fields: [

@@ -27,3 +27,15 @@ export const protectedAssets = defineType({
     }),
   ],
 })
+
+export const letterField = defineField({
+  name: 'letter',
+  type: 'string',
+  title: 'Buchstabe',
+  options: {
+    list: ['a', 'b', 'c', 'd', 'e', 'f', 'g'].map((value) => ({
+      title: value,
+      value,
+    })),
+  },
+})

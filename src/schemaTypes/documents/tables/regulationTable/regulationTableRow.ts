@@ -1,4 +1,5 @@
 import { defineField, defineType } from 'sanity'
+import { letterField } from '../common'
 
 import regulationTableInput from './regulationTableInput'
 
@@ -7,7 +8,7 @@ export default defineType({
   name: 'regulationRow',
   title: 'Anforderung Zeile',
   fields: [
-    defineField({ name: 'letter', type: 'string', title: 'Buchstabe' }),
+    letterField,
     defineField({
       name: 'system',
       title: 'System',

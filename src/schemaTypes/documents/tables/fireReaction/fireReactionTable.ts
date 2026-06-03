@@ -1,6 +1,15 @@
 import { defineField, defineType } from 'sanity'
 import { BrickWallFire } from 'lucide-react'
 
+const fireProtectionConcepts = [
+  { title: 'Grundkonzept', value: 'basic-concept' },
+  { title: 'Löschanlagenkonzept', value: 'extinguishing-system-concept' },
+  {
+    title: 'Grundkonzept und Löschanlagenkonzept',
+    value: 'basic-and-extinguishing-concept',
+  },
+]
+
 export default defineType({
   name: 'fireReactionTable',
   title: 'Brandverhalten',
@@ -20,18 +29,9 @@ export default defineType({
       name: 'concept',
       type: 'string',
       title: 'Konzept',
+      validation: (Rule) => Rule.required(),
       options: {
-        list: [
-          { title: 'Grundkonzept', value: 'basic-concept' },
-          {
-            title: 'Löschanlagenkonzept',
-            value: 'extinguishing-system-concept',
-          },
-          {
-            title: 'Grundkonzept und Löschanlagenkonzept',
-            value: 'basic-and-extinguishing-concept',
-          },
-        ],
+        list: fireProtectionConcepts,
       },
     }),
     defineField({
@@ -51,6 +51,16 @@ export default defineType({
   preview: {
     select: {
       title: 'name.de',
+      concept: 'concept',
+    },
+    prepare({ title, concept }) {
+      const conceptTitles = Object.fromEntries(
+        fireProtectionConcepts.map(({ value, title }) => [value, title]),
+      )
+      return {
+        title,
+        subtitle: conceptTitles[concept] || concept,
+      }
     },
   },
 })

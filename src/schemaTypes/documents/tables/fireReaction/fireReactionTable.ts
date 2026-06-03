@@ -38,8 +38,6 @@ export default defineType({
       name: 'description',
       type: 'localeString',
       title: 'Anforderungsbeschreibung',
-      description:
-        'z.B. Kriterium für die notwendige Feuerwiderstandsdauer der Brandabschnittsbildung',
     }),
     defineField({
       name: 'rows',

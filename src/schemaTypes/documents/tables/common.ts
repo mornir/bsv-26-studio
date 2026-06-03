@@ -3,12 +3,14 @@ import { defineField, defineType } from 'sanity'
 export const protectedAssets = defineType({
   name: 'protectedAssets',
   type: 'object',
-
+  options: {
+    columns: 3,
+  },
   fields: [
     defineField({
       name: 'peopleInBuilding',
       type: 'boolean',
-      title: 'Personen im Gebäude',
+      title: 'Personen',
       validation: (Rule) => Rule.required(),
     }),
     defineField({

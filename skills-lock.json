@@ -1,6 +1,12 @@
 {
   "version": 1,
   "skills": {
+    "content-modeling-best-practices": {
+      "source": "sanity-io/agent-toolkit",
+      "sourceType": "github",
+      "skillPath": "skills/content-modeling-best-practices/SKILL.md",
+      "computedHash": "7e2b080109bfc77dc16696da77dbe63786fe08f726e525b0704cf255fed49da9"
+    },
     "create-agent-with-sanity-context": {
       "source": "sanity-io/agent-context",
       "sourceType": "github",
@@ -10,6 +16,12 @@
       "source": "sanity-io/agent-context",
       "sourceType": "github",
       "computedHash": "7d0054d2cf7d94b396a986686e7cb0ab93b2e544af919756b726bcfb21e4358f"
+    },
+    "sanity-best-practices": {
+      "source": "sanity-io/agent-toolkit",
+      "sourceType": "github",
+      "skillPath": "skills/sanity-best-practices/SKILL.md",
+      "computedHash": "2da08a75f909fbbc0901508a57c6be956bb4a0844a7693fc7979912de2f06644"
     },
     "shape-your-agent": {
       "source": "sanity-io/agent-context",

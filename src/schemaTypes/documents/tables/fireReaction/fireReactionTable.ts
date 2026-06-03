@@ -17,6 +17,24 @@ export default defineType({
     }),
     defineField({ name: 'name', type: 'localeString', title: 'Tabellenname' }),
     defineField({
+      name: 'concept',
+      type: 'string',
+      title: 'Konzept',
+      options: {
+        list: [
+          { title: 'Grundkonzept', value: 'basic-concept' },
+          {
+            title: 'Löschanlagenkonzept',
+            value: 'extinguishing-system-concept',
+          },
+          {
+            title: 'Grundkonzept und Löschanlagenkonzept',
+            value: 'basic-and-extinguishing-concept',
+          },
+        ],
+      },
+    }),
+    defineField({
       name: 'description',
       type: 'localeString',
       title: 'Anforderungsbeschreibung',

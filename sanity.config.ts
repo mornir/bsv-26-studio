@@ -71,6 +71,7 @@ export default defineConfig({
         'appendix',
         'usersGroup',
         'regulationTable',
+        'fireReactionTable',
       ],
     }),
     agentContextPlugin(),

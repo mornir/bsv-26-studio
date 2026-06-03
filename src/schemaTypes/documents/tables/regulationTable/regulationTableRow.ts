@@ -1,4 +1,5 @@
 import { defineField, defineType } from 'sanity'
+import { toPlainText } from '@portabletext/toolkit'
 import { letterField } from '../common'
 
 import regulationTableInput from './regulationTableInput'
@@ -62,6 +63,14 @@ export default defineType({
               type: 'localeSimpleEditor',
             },
           ],
+          preview: {
+            select: { criterion: 'criterion.de' },
+            prepare({ criterion }) {
+              return {
+                title: (criterion && toPlainText(criterion)) || null,
+              }
+            },
+          },
         },
       ],
     },
@@ -70,11 +79,13 @@ export default defineType({
     select: {
       letter: 'letter',
       system: 'system.name.de',
+      systemProperty: 'systemProperty.de',
     },
     prepare(selection) {
-      const { system, letter } = selection
+      const { system, letter, systemProperty } = selection
       return {
         title: `${letter}. ${system}`,
+        subtitle: (systemProperty && toPlainText(systemProperty)) || null,
       }
     },
   },

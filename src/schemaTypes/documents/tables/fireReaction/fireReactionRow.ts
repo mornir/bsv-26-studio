@@ -1,4 +1,5 @@
 import { defineField, defineType } from 'sanity'
+import { toPlainText } from '@portabletext/toolkit'
 import { letterField } from '../common'
 
 const values = ['RF3', 'RF2', 'RF1', '(cr)']
@@ -56,11 +57,13 @@ export default defineType({
     select: {
       letter: 'letter',
       system: 'system.name.de',
+      systemProperty: 'systemProperty.de',
     },
     prepare(selection) {
-      const { system, letter } = selection
+      const { system, letter, systemProperty } = selection
       return {
         title: `${letter}. ${system}`,
+        subtitle: (systemProperty && toPlainText(systemProperty)) || null,
       }
     },
   },

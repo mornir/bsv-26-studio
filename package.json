@@ -17,6 +17,7 @@
     "sanity"
   ],
   "dependencies": {
+    "@portabletext/toolkit": "^5.0.2",
     "@sanity/agent-context": "^0.5.0",
     "@sanity/dashboard": "^5.0.1",
     "@sanity/language-filter": "^5.0.1",

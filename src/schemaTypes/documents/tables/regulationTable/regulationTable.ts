@@ -22,7 +22,7 @@ export default defineType({
       title: 'Anforderungsbeschreibung',
     }),
     defineField({
-      name: 'requirements',
+      name: 'possibleRequirements',
       title: 'Mögliche Anforderungen',
       type: 'array',
       options: { disableActions: ['duplicate'] },

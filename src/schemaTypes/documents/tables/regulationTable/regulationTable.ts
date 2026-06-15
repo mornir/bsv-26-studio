@@ -26,14 +26,11 @@ export default defineType({
       title: 'Mögliche Anforderungen',
       type: 'array',
       options: { disableActions: ['duplicate'] },
-      description:
-        'z.B. Rauchverbot, sicherheitsbeleuchtete Kennzeichnung, etc. Aber keine Brandverhaltensgruppen! Falls keine, leer lassen.',
       of: [
         {
           name: 'requirement',
           type: 'object',
           fields: [
-            { name: 'value', type: 'string', title: 'ID' },
             {
               name: 'name',
               type: 'localeString',

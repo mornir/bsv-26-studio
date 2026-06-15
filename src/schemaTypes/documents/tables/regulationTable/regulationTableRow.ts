@@ -45,8 +45,7 @@ export default defineType({
               options: {
                 //@ts-ignore
                 listGenerator: ({ document }) => {
-                  console.log(document.requirements)
-                  return (document.requirements || []).map(
+                  return (document.possibleRequirements || []).map(
                     (requirement: any) => {
                       return {
                         title: requirement?.name?.de || 'Error: Missing Title',
@@ -64,10 +63,14 @@ export default defineType({
             },
           ],
           preview: {
-            select: { criterion: 'criterion.de' },
-            prepare({ criterion }) {
+            select: {
+              criterion: 'criterion.de',
+              requirement: 'type',
+            },
+            prepare({ criterion, requirement }) {
               return {
-                title: (criterion && toPlainText(criterion)) || null,
+                title: requirement,
+                subtitle: (criterion && toPlainText(criterion)) || null,
               }
             },
           },

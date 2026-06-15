@@ -36,7 +36,7 @@ export default defineType({
           type: 'object',
           fields: [
             {
-              name: 'type',
+              name: 'name',
               type: 'string',
               title: 'Anforderung',
               components: {
@@ -65,7 +65,7 @@ export default defineType({
           preview: {
             select: {
               criterion: 'criterion.de',
-              requirement: 'type',
+              requirement: 'name',
             },
             prepare({ criterion, requirement }) {
               return {

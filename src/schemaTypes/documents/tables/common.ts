@@ -12,18 +12,21 @@ export const protectedAssets = defineType({
       type: 'boolean',
       title: 'Personen',
       validation: (Rule) => Rule.required(),
+      initialValue: false,
     }),
     defineField({
       name: 'buildings',
       type: 'boolean',
       title: 'Gebäude',
       validation: (Rule) => Rule.required(),
+      initialValue: false,
     }),
     defineField({
       name: 'firefighters',
       type: 'boolean',
       title: 'Interventionskräfte',
       validation: (Rule) => Rule.required(),
+      initialValue: false,
     }),
   ],
 })

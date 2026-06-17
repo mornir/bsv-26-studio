@@ -15,6 +15,7 @@ import { latexInput } from 'sanity-plugin-latex-input'
 import { singletonTools } from 'sanity-plugin-singleton-management'
 import { agentContextPlugin } from '@sanity/agent-context/studio'
 import { richTablePlugin } from 'sanity-plugin-rich-table'
+import { webhooksTrigger } from 'sanity-plugin-webhooks-trigger'
 
 // Environment variables for project configuration
 const projectId = process.env.SANITY_STUDIO_PROJECT_ID || 'your-projectID'
@@ -78,6 +79,10 @@ export default defineConfig({
       ],
     }),
     agentContextPlugin(),
+    webhooksTrigger({
+      title: 'Veröffentlichen',
+      text: 'Custom text',
+    }),
   ],
   schema: {
     types: schemaTypes,

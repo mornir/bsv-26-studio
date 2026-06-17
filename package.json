@@ -32,6 +32,7 @@
     "sanity-plugin-latex-input": "^2.0.7",
     "sanity-plugin-rich-table": "^1.1.1",
     "sanity-plugin-singleton-management": "^1.0.7",
+    "sanity-plugin-webhooks-trigger": "^0.9.0",
     "styled-components": "^6.4.1"
   },
   "devDependencies": {

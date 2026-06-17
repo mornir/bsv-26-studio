@@ -53,6 +53,9 @@ importers:
       sanity-plugin-singleton-management:
         specifier: ^1.0.7
         version: 1.0.7(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(sanity@5.26.0(@emotion/is-prop-valid@1.4.0)(@noble/hashes@2.2.0)(@oclif/core@4.11.2)(@sanity/cli-core@1.3.2(@noble/hashes@2.2.0)(@types/node@25.9.1)(yaml@2.8.4))(@types/node@25.9.1)(@types/react@19.2.14)(jiti@2.7.0)(prismjs@1.27.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(styled-components@6.4.1(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(typescript@6.0.3))
+      sanity-plugin-webhooks-trigger:
+        specifier: ^0.9.0
+        version: 0.9.0(@emotion/is-prop-valid@1.4.0)(@types/react@19.2.14)(react-dom@19.2.6(react@19.2.6))(react-is@19.2.6)(react@19.2.6)(sanity@5.26.0(@emotion/is-prop-valid@1.4.0)(@noble/hashes@2.2.0)(@oclif/core@4.11.2)(@sanity/cli-core@1.3.2(@noble/hashes@2.2.0)(@types/node@25.9.1)(yaml@2.8.4))(@types/node@25.9.1)(@types/react@19.2.14)(jiti@2.7.0)(prismjs@1.27.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(styled-components@6.4.1(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(typescript@6.0.3))(styled-components@6.4.1(react-dom@19.2.6(react@19.2.6))(react@19.2.6))
       styled-components:
         specifier: ^6.4.1
         version: 6.4.1(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
@@ -1799,6 +1802,7 @@ packages:
   '@sanity/agent-context@0.5.0':
     resolution: {integrity: sha512-aFocwQJc/Cu2kSIRB02HZkVjQIAsgvxTsifhuZgTdwk4i59Zv1srbT5VBr7DgMw7+6DF2x0cFC3rw/VqK+FVAw==}
     engines: {node: '>=20.19 <22 || >=22.12'}
+    deprecated: Renamed to @sanity/context — https://www.sanity.io/docs/ai/sanity-context
     peerDependencies:
       '@sanity/client': ^7
       '@sanity/color': ^3
@@ -2258,6 +2262,11 @@ packages:
 
   '@types/prismjs@1.26.6':
     resolution: {integrity: sha512-vqlvI7qlMvcCBbVe0AKAb4f97//Hy0EBTaiW8AalRnG/xAN5zOiWWyrNqNXeq8+KAuvRewjCVY1+IPxk4RdNYw==}
+
+  '@types/react-dom@19.2.3':
+    resolution: {integrity: sha512-jp2L/eY6fn+KgVVQAOqYItbF0VY/YApe5Mz2F0aykSO8gx31bYCZyvSeYxCHKvzHG5eZjc+zyaS5BrBWya2+kQ==}
+    peerDependencies:
+      '@types/react': ^19.2.0
 
   '@types/react@19.2.14':
     resolution: {integrity: sha512-ilcTH/UniCkMdtexkoCN0bI7pMcJDvmQFPvuPvmEaYA/NSfFTAgdUSLAoVjaRJm7+6PvcM+q1zYOwS4wTYMF9w==}
@@ -2807,6 +2816,9 @@ packages:
   cross-spawn@7.0.6:
     resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
     engines: {node: '>= 8'}
+
+  crypto-js@4.2.0:
+    resolution: {integrity: sha512-KALDyEYgpY+Rlob/iriUtjV6d5Eq+Y191A5g4UqLAi8CyGP9N1+FdVbkc1SxKc2r4YAYqG8JzO2KGL+AizD70Q==}
 
   css-select@5.2.2:
     resolution: {integrity: sha512-TizTzUddG/xYLA3NXodFM0fSbNizXjOKhqiQQwvhlspadZokn1KDy0NZFS0wuEubIYAV5/c1/lAr0TaaFXEXzw==}
@@ -4620,6 +4632,13 @@ packages:
     peerDependencies:
       react: ^18 || ^19.2.1
       sanity: ^3 || ^4 || ^5.0.0-0
+
+  sanity-plugin-webhooks-trigger@0.9.0:
+    resolution: {integrity: sha512-bOTWt+mgpSRLNLe3Sk69M05Iuzerqr3/ydTC8w/cA4+PN6+uOZMr/AOZvXDAidPpeWCNgGrFJlr+2388CTRvHA==}
+    engines: {node: '>=22.12'}
+    peerDependencies:
+      react: ^19
+      sanity: ^3 || ^4 || ^5 || ^6
 
   sanity@5.26.0:
     resolution: {integrity: sha512-TcBDr9Di39jSZtEPiyR7RUjMoPRk5NJzeKI/g7wcdwJLy+lVC1yylRQAmmNNEwzKkPG1JCylt2b+vy50WH7WgQ==}
@@ -8160,6 +8179,10 @@ snapshots:
 
   '@types/prismjs@1.26.6': {}
 
+  '@types/react-dom@19.2.3(@types/react@19.2.14)':
+    dependencies:
+      '@types/react': 19.2.14
+
   '@types/react@19.2.14':
     dependencies:
       csstype: 3.2.3
@@ -8742,6 +8765,8 @@ snapshots:
       path-key: 3.1.1
       shebang-command: 2.0.0
       which: 2.0.2
+
+  crypto-js@4.2.0: {}
 
   css-select@5.2.2:
     dependencies:
@@ -10823,6 +10848,23 @@ snapshots:
       sanity: 5.26.0(@emotion/is-prop-valid@1.4.0)(@noble/hashes@2.2.0)(@oclif/core@4.11.2)(@sanity/cli-core@1.3.2(@noble/hashes@2.2.0)(@types/node@25.9.1)(yaml@2.8.4))(@types/node@25.9.1)(@types/react@19.2.14)(jiti@2.7.0)(prismjs@1.27.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(styled-components@6.4.1(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(typescript@6.0.3)
     transitivePeerDependencies:
       - react-dom
+
+  sanity-plugin-webhooks-trigger@0.9.0(@emotion/is-prop-valid@1.4.0)(@types/react@19.2.14)(react-dom@19.2.6(react@19.2.6))(react-is@19.2.6)(react@19.2.6)(sanity@5.26.0(@emotion/is-prop-valid@1.4.0)(@noble/hashes@2.2.0)(@oclif/core@4.11.2)(@sanity/cli-core@1.3.2(@noble/hashes@2.2.0)(@types/node@25.9.1)(yaml@2.8.4))(@types/node@25.9.1)(@types/react@19.2.14)(jiti@2.7.0)(prismjs@1.27.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(styled-components@6.4.1(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(typescript@6.0.3))(styled-components@6.4.1(react-dom@19.2.6(react@19.2.6))(react@19.2.6)):
+    dependencies:
+      '@sanity/icons': 3.7.4(react@19.2.6)
+      '@sanity/incompatible-plugin': 1.0.5(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+      '@sanity/ui': 3.2.0(@emotion/is-prop-valid@1.4.0)(react-dom@19.2.6(react@19.2.6))(react-is@19.2.6)(react@19.2.6)(styled-components@6.4.1(react-dom@19.2.6(react@19.2.6))(react@19.2.6))
+      '@types/react-dom': 19.2.3(@types/react@19.2.14)
+      crypto-js: 4.2.0
+      nanoid: 5.1.11
+      react: 19.2.6
+      sanity: 5.26.0(@emotion/is-prop-valid@1.4.0)(@noble/hashes@2.2.0)(@oclif/core@4.11.2)(@sanity/cli-core@1.3.2(@noble/hashes@2.2.0)(@types/node@25.9.1)(yaml@2.8.4))(@types/node@25.9.1)(@types/react@19.2.14)(jiti@2.7.0)(prismjs@1.27.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(styled-components@6.4.1(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(typescript@6.0.3)
+    transitivePeerDependencies:
+      - '@emotion/is-prop-valid'
+      - '@types/react'
+      - react-dom
+      - react-is
+      - styled-components
 
   sanity@5.26.0(@emotion/is-prop-valid@1.4.0)(@noble/hashes@2.2.0)(@oclif/core@4.11.2)(@sanity/cli-core@1.3.2(@noble/hashes@2.2.0)(@types/node@25.9.1)(yaml@2.8.4))(@types/node@25.9.1)(@types/react@19.2.14)(jiti@2.7.0)(prismjs@1.27.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(styled-components@6.4.1(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(typescript@6.0.3):
     dependencies:

@@ -36,7 +36,7 @@ export default defineType({
           type: 'object',
           fields: [
             {
-              name: 'type',
+              name: 'name',
               type: 'string',
               title: 'Anforderung',
               options: {
@@ -49,6 +49,18 @@ export default defineType({
               type: 'localeSimpleEditor',
             },
           ],
+          preview: {
+            select: {
+              criterion: 'criterion.de',
+              requirement: 'name',
+            },
+            prepare({ criterion, requirement }) {
+              return {
+                title: requirement,
+                subtitle: (criterion && toPlainText(criterion)) || null,
+              }
+            },
+          },
         },
       ],
     },

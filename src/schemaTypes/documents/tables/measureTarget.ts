@@ -1,11 +1,12 @@
 import { defineType, defineField } from 'sanity'
-import { TbShield } from 'react-icons/tb'
+
+import { ShieldQuestionMark } from 'lucide-react'
 
 export default defineType({
   name: 'measureTarget',
   title: 'Schutzgüter nach Massnahmen',
   type: 'document',
-  icon: TbShield,
+  icon: ShieldQuestionMark,
   fields: [
     defineField({
       name: 'measure',

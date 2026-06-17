@@ -8,6 +8,8 @@ import {
   TbHomeCheck,
 } from 'react-icons/tb'
 
+import { BrickWallFire } from 'lucide-react'
+
 export default defineType({
   title: 'Block Content',
   name: 'blockContent',
@@ -24,6 +26,13 @@ export default defineType({
           type: 'reference',
           to: [{ type: 'regulationTable' }],
           icon: TbHomeCheck,
+        }),
+        defineArrayMember({
+          name: 'fireReactionTable',
+          title: 'Brandverhalten',
+          type: 'reference',
+          to: [{ type: 'fireReactionTable' }],
+          icon: BrickWallFire,
         }),
         defineArrayMember({
           name: 'table',

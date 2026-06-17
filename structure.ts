@@ -14,12 +14,12 @@ export const structure: StructureResolver = (S, context) =>
       S.documentTypeListItem('figure').title('Abbildungen'),
       S.documentTypeListItem('faq').title('Anfragen'),
       S.divider(),
-      S.documentTypeListItem('table').title('Tabellen'),
       S.documentTypeListItem('regulationTable').title('Anforderungstabellen'),
+      S.documentTypeListItem('fireReactionTable').title('Brandverhalten'),
       S.documentTypeListItem('measureTarget').title(
         'Schutzgüter nach Massnahmen',
       ),
-      S.documentTypeListItem('fireReactionTable').title('Brandverhalten'),
+      S.documentTypeListItem('table').title('Andere Tabellen'),
       singletonDocumentListItem({
         S,
         context,

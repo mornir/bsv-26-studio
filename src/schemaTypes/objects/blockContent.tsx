@@ -19,18 +19,18 @@ export default defineType({
       type: 'block',
       of: [
         defineArrayMember({
-          name: 'table',
-          title: 'Tabelle',
-          type: 'reference',
-          to: [{ type: 'table' }],
-          icon: TbTableFilled,
-        }),
-        defineArrayMember({
           name: 'regulationTable',
           title: 'Anforderungstabelle',
           type: 'reference',
           to: [{ type: 'regulationTable' }],
           icon: TbHomeCheck,
+        }),
+        defineArrayMember({
+          name: 'table',
+          title: 'Andere Tabellen',
+          type: 'reference',
+          to: [{ type: 'table' }],
+          icon: TbTableFilled,
         }),
       ],
       // Styles let you set what your user can mark up blocks with. These

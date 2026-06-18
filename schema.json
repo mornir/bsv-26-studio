@@ -842,36 +842,6 @@
   },
   {
     "type": "type",
-    "name": "table.reference",
-    "value": {
-      "type": "object",
-      "attributes": {
-        "_ref": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "string"
-          }
-        },
-        "_type": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "string",
-            "value": "reference"
-          }
-        },
-        "_weak": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "boolean"
-          },
-          "optional": true
-        }
-      },
-      "dereferencesTo": "table"
-    }
-  },
-  {
-    "type": "type",
     "name": "regulationTable.reference",
     "value": {
       "type": "object",
@@ -898,6 +868,66 @@
         }
       },
       "dereferencesTo": "regulationTable"
+    }
+  },
+  {
+    "type": "type",
+    "name": "fireReactionTable.reference",
+    "value": {
+      "type": "object",
+      "attributes": {
+        "_ref": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string"
+          }
+        },
+        "_type": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string",
+            "value": "reference"
+          }
+        },
+        "_weak": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "boolean"
+          },
+          "optional": true
+        }
+      },
+      "dereferencesTo": "fireReactionTable"
+    }
+  },
+  {
+    "type": "type",
+    "name": "table.reference",
+    "value": {
+      "type": "object",
+      "attributes": {
+        "_ref": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string"
+          }
+        },
+        "_type": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string",
+            "value": "reference"
+          }
+        },
+        "_weak": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "boolean"
+          },
+          "optional": true
+        }
+      },
+      "dereferencesTo": "table"
     }
   },
   {
@@ -997,7 +1027,7 @@
                     },
                     "rest": {
                       "type": "inline",
-                      "name": "table.reference"
+                      "name": "regulationTable.reference"
                     }
                   },
                   {
@@ -1012,7 +1042,22 @@
                     },
                     "rest": {
                       "type": "inline",
-                      "name": "regulationTable.reference"
+                      "name": "fireReactionTable.reference"
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "attributes": {
+                      "_key": {
+                        "type": "objectAttribute",
+                        "value": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "rest": {
+                      "type": "inline",
+                      "name": "table.reference"
                     }
                   }
                 ]
@@ -1839,7 +1884,7 @@
             "of": {
               "type": "object",
               "attributes": {
-                "type": {
+                "name": {
                   "type": "objectAttribute",
                   "value": {
                     "type": "union",
@@ -1979,7 +2024,7 @@
             "of": {
               "type": "object",
               "attributes": {
-                "type": {
+                "name": {
                   "type": "objectAttribute",
                   "value": {
                     "type": "string"
@@ -2079,20 +2124,13 @@
         },
         "optional": true
       },
-      "requirements": {
+      "possibleRequirements": {
         "type": "objectAttribute",
         "value": {
           "type": "array",
           "of": {
             "type": "object",
             "attributes": {
-              "value": {
-                "type": "objectAttribute",
-                "value": {
-                  "type": "string"
-                },
-                "optional": true
-              },
               "name": {
                 "type": "objectAttribute",
                 "value": {

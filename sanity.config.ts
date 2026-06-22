@@ -13,7 +13,7 @@ import { structure } from './structure'
 import { languageFilter } from '@sanity/language-filter'
 import { latexInput } from 'sanity-plugin-latex-input'
 import { singletonTools } from 'sanity-plugin-singleton-management'
-import { agentContextPlugin } from '@sanity/agent-context/studio'
+import { contextPlugin } from '@sanity/context/studio'
 import { webhooksTrigger } from 'sanity-plugin-webhooks-trigger'
 
 // Environment variables for project configuration
@@ -76,7 +76,7 @@ export default defineConfig({
         'fireReactionTable',
       ],
     }),
-    agentContextPlugin(),
+    contextPlugin(),
     webhooksTrigger({
       title: 'Veröffentlichen',
       text: 'Custom text',

@@ -19,11 +19,6 @@ export default defineType({
       type: 'localeString',
       validation: (Rule) => Rule.required(),
     }),
-    defineField({
-      name: 'myRichTable',
-      title: 'My Rich Table',
-      type: 'richTable', // Use the rich table object type
-    }),
     {
       name: 'source',
       type: 'string',

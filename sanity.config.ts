@@ -14,7 +14,6 @@ import { languageFilter } from '@sanity/language-filter'
 import { latexInput } from 'sanity-plugin-latex-input'
 import { singletonTools } from 'sanity-plugin-singleton-management'
 import { agentContextPlugin } from '@sanity/agent-context/studio'
-import { richTablePlugin } from 'sanity-plugin-rich-table'
 import { webhooksTrigger } from 'sanity-plugin-webhooks-trigger'
 
 // Environment variables for project configuration
@@ -62,7 +61,6 @@ export default defineConfig({
     visionTool(),
     latexInput(),
     singletonTools(),
-    richTablePlugin({}),
     languageFilter({
       supportedLanguages: [
         { id: 'de', title: 'Deutsch' },

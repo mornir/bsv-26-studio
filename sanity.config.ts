@@ -88,10 +88,8 @@ export default defineConfig({
     types: schemaTypes,
   },
   auth: {
-    redirectOnSingle: false, //  If true, the "Choose login provider" (eg "Google, "GitHub", "E-mail/password") screen will be skipped if only a single provider is configured in the `providers` array
-    mode: 'append', // Use 'replace' if you only want this login provider
-    loginMethod: 'dual', // Attempt to use cookies where possible, falling back to storing authentication token in `localStorage` otherwise
-    providers: [
+    providers: (defaultProviders) => [
+      ...defaultProviders,
       {
         name: 'saml',
         title: 'VKG SAML Login',

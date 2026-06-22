@@ -1,6 +1,6 @@
 import { singletonDocumentListItem } from 'sanity-plugin-singleton-management'
 import { TbCertificate } from 'react-icons/tb'
-import { AGENT_CONTEXT_SCHEMA_TYPE_NAME } from '@sanity/agent-context/studio'
+import { CONTEXT_SCHEMA_TYPE_NAME } from '@sanity/context/studio'
 
 import { Bot } from 'lucide-react'
 
@@ -36,5 +36,5 @@ export const structure: StructureResolver = (S, context) =>
       S.documentTypeListItem('chapter').title('Kapitel'),
       S.documentTypeListItem('section').title('Abschnitte'),
       S.divider(),
-      S.documentTypeListItem(AGENT_CONTEXT_SCHEMA_TYPE_NAME).icon(Bot),
+      S.documentTypeListItem(CONTEXT_SCHEMA_TYPE_NAME).icon(Bot),
     ])

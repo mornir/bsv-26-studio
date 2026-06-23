@@ -21,6 +21,7 @@ export default defineType({
       title: 'Artikel',
       type: 'reference',
       to: [{ type: 'article' }],
+      validation: (Rule) => Rule.required(),
       description:
         'Verweis auf den zugehörigen Artikel, der diese Tabelle definiert.',
     }),

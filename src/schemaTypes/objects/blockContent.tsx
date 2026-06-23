@@ -1,14 +1,11 @@
 import { defineField, defineType, defineArrayMember } from 'sanity'
 import {
-  TbTableFilled,
+  TbTable,
   TbMath,
   TbPhoto,
   TbSuperscript,
   TbSubscript,
-  TbHomeCheck,
 } from 'react-icons/tb'
-
-import { BrickWallFire } from 'lucide-react'
 
 export default defineType({
   title: 'Block Content',
@@ -21,25 +18,26 @@ export default defineType({
       type: 'block',
       of: [
         defineArrayMember({
-          name: 'regulationTable',
-          title: 'Anforderungstabelle',
-          type: 'reference',
-          to: [{ type: 'regulationTable' }],
-          icon: TbHomeCheck,
-        }),
-        defineArrayMember({
-          name: 'fireReactionTable',
-          title: 'Brandverhalten',
-          type: 'reference',
-          to: [{ type: 'fireReactionTable' }],
-          icon: BrickWallFire,
-        }),
-        defineArrayMember({
           name: 'table',
-          title: 'Andere Tabellen',
+          title: 'Tabellen',
           type: 'reference',
-          to: [{ type: 'table' }],
-          icon: TbTableFilled,
+          to: [
+            { type: 'table' },
+            { type: 'regulationTable' },
+            { type: 'fireReactionTable' },
+          ],
+          icon: TbTable,
+          options: {
+            // Only show tables referencing the current article
+            filter: ({ document }) => {
+              return {
+                filter: 'article._ref == $docId',
+                params: {
+                  docId: document._id.replace(/^drafts\./, ''),
+                },
+              }
+            },
+          },
         }),
       ],
       // Styles let you set what your user can mark up blocks with. These

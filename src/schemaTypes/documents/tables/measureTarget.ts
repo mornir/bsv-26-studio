@@ -9,6 +9,15 @@ export default defineType({
   icon: ShieldQuestionMark,
   fields: [
     defineField({
+      name: 'article',
+      title: 'Artikel',
+      type: 'reference',
+      to: [{ type: 'article' }],
+      validation: (Rule) => Rule.required(),
+      description:
+        'Verweis auf den zugehörigen Artikel, der diese Tabelle definiert.',
+    }),
+    defineField({
       name: 'measure',
       title: 'Massnahme',
       type: 'localeString',

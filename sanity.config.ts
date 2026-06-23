@@ -78,8 +78,8 @@ export default defineConfig({
     }),
     contextPlugin(),
     webhooksTrigger({
-      title: 'Veröffentlichen',
-      text: 'Custom text',
+      title: 'HTML-Website',
+      text: 'Klicke auf den grünen Button, um html.bsvonline.ch zu aktualisieren. Nach ca. 3 Minuten ist die Website neu aufgebaut. 😃',
     }),
   ],
   schema: {

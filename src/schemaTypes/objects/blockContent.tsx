@@ -25,6 +25,7 @@ export default defineType({
             { type: 'table' },
             { type: 'regulationTable' },
             { type: 'fireReactionTable' },
+            { type: 'measureTarget' },
           ],
           icon: TbTable,
           options: {

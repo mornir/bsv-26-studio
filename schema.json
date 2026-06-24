@@ -70,7 +70,7 @@
           "type": "inline",
           "name": "article.reference"
         },
-        "optional": true
+        "optional": false
       },
       "name": {
         "type": "objectAttribute",
@@ -842,6 +842,36 @@
   },
   {
     "type": "type",
+    "name": "table.reference",
+    "value": {
+      "type": "object",
+      "attributes": {
+        "_ref": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string"
+          }
+        },
+        "_type": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string",
+            "value": "reference"
+          }
+        },
+        "_weak": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "boolean"
+          },
+          "optional": true
+        }
+      },
+      "dereferencesTo": "table"
+    }
+  },
+  {
+    "type": "type",
     "name": "regulationTable.reference",
     "value": {
       "type": "object",
@@ -932,36 +962,6 @@
   },
   {
     "type": "type",
-    "name": "table.reference",
-    "value": {
-      "type": "object",
-      "attributes": {
-        "_ref": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "string"
-          }
-        },
-        "_type": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "string",
-            "value": "reference"
-          }
-        },
-        "_weak": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "boolean"
-          },
-          "optional": true
-        }
-      },
-      "dereferencesTo": "table"
-    }
-  },
-  {
-    "type": "type",
     "name": "figure.reference",
     "value": {
       "type": "object",
@@ -1046,64 +1046,25 @@
                     }
                   },
                   {
-                    "type": "object",
-                    "attributes": {
-                      "_key": {
-                        "type": "objectAttribute",
-                        "value": {
-                          "type": "string"
-                        }
+                    "type": "union",
+                    "of": [
+                      {
+                        "type": "inline",
+                        "name": "table.reference"
+                      },
+                      {
+                        "type": "inline",
+                        "name": "regulationTable.reference"
+                      },
+                      {
+                        "type": "inline",
+                        "name": "fireReactionTable.reference"
+                      },
+                      {
+                        "type": "inline",
+                        "name": "measureTarget.reference"
                       }
-                    },
-                    "rest": {
-                      "type": "inline",
-                      "name": "regulationTable.reference"
-                    }
-                  },
-                  {
-                    "type": "object",
-                    "attributes": {
-                      "_key": {
-                        "type": "objectAttribute",
-                        "value": {
-                          "type": "string"
-                        }
-                      }
-                    },
-                    "rest": {
-                      "type": "inline",
-                      "name": "fireReactionTable.reference"
-                    }
-                  },
-                  {
-                    "type": "object",
-                    "attributes": {
-                      "_key": {
-                        "type": "objectAttribute",
-                        "value": {
-                          "type": "string"
-                        }
-                      }
-                    },
-                    "rest": {
-                      "type": "inline",
-                      "name": "measureTarget.reference"
-                    }
-                  },
-                  {
-                    "type": "object",
-                    "attributes": {
-                      "_key": {
-                        "type": "objectAttribute",
-                        "value": {
-                          "type": "string"
-                        }
-                      }
-                    },
-                    "rest": {
-                      "type": "inline",
-                      "name": "table.reference"
-                    }
+                    ]
                   }
                 ]
               }
@@ -1643,6 +1604,14 @@
           "type": "string"
         }
       },
+      "article": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "inline",
+          "name": "article.reference"
+        },
+        "optional": false
+      },
       "name": {
         "type": "objectAttribute",
         "value": {
@@ -2077,7 +2046,7 @@
           "type": "inline",
           "name": "article.reference"
         },
-        "optional": true
+        "optional": false
       },
       "name": {
         "type": "objectAttribute",

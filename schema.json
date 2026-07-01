@@ -1644,7 +1644,7 @@
           "of": [
             {
               "type": "string",
-              "value": "users_desc"
+              "value": "users_risk"
             },
             {
               "type": "string",

@@ -2,7 +2,7 @@ import { defineField, defineType } from 'sanity'
 import { TbTable } from 'react-icons/tb'
 
 const predefinedTables = [
-  { title: 'Nutzergruppen-Beschreibung', value: 'users_desc' },
+  { title: 'Nutzergruppen-Gefährdung', value: 'users_risk' },
   { title: 'Nutzercharakteristiken', value: 'users_char' },
   { title: 'Nutzergruppen-Beispiele', value: 'users_examples' },
 ]

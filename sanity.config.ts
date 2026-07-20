@@ -15,6 +15,7 @@ import { latexInput } from 'sanity-plugin-latex-input'
 import { singletonTools } from 'sanity-plugin-singleton-management'
 import { contextPlugin } from '@sanity/context/studio'
 import { webhooksTrigger } from 'sanity-plugin-webhooks-trigger'
+import { richTablePlugin } from 'sanity-plugin-rich-table'
 
 // Environment variables for project configuration
 const projectId = process.env.SANITY_STUDIO_PROJECT_ID || 'your-projectID'
@@ -80,6 +81,9 @@ export default defineConfig({
     webhooksTrigger({
       title: 'HTML-Website',
       text: 'Klicke auf den grünen Button, um html.bsvonline.ch zu aktualisieren. Nach ca. 3 Minuten ist die Website neu aufgebaut. 😃',
+    }),
+    richTablePlugin({
+      portableTextSchemaTypeName: 'simpleEditor',
     }),
   ],
   schema: {

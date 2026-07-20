@@ -29,13 +29,13 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     {
-      name: 'source',
+      name: 'type',
       type: 'string',
       title: 'Tabellentyp',
       options: {
         list: [
-          { title: 'Predefined table', value: 'predefined' },
-          { title: 'Custom HTML table', value: 'html' },
+          { title: 'Vordefinierte Tabelle', value: 'predefined' },
+          { title: 'Benutzerdefinierte Tabelle', value: 'custom' },
         ],
         layout: 'radio',
       },
@@ -49,30 +49,30 @@ export default defineType({
       options: {
         list: predefinedTables,
       },
-      hidden: ({ parent }) => parent?.source !== 'predefined',
+      hidden: ({ parent }) => parent?.type !== 'predefined',
       validation: (Rule) =>
         Rule.custom((value, context) => {
           // @ts-expect-error
-          if (context.parent?.source === 'predefined' && !value) {
+          if (context.parent?.type === 'predefined' && !value) {
             return 'Table ID is required'
           }
           return true
         }),
     },
-    {
-      name: 'html',
-      type: 'localeText',
-      title: 'HTML-Tabelle',
-      hidden: ({ parent }) => parent?.source !== 'html',
+    defineField({
+      name: 'customTable',
+      title: 'Custom Table',
+      type: 'localeCustomTable',
+      hidden: ({ parent }) => parent?.type !== 'custom',
       validation: (Rule) =>
         Rule.custom((value, context) => {
           // @ts-expect-error
-          if (context.parent?.source === 'html' && !value) {
-            return 'HTML is required'
+          if (context.parent?.type === 'custom' && !value) {
+            return 'Feld ist leer'
           }
           return true
         }),
-    },
+    }),
   ],
   preview: {
     select: {

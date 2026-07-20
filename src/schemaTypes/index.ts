@@ -22,6 +22,7 @@ import {
   localeSimpleEditor,
   localeText,
   localeImage,
+  localeCustomTable,
 } from './objects/localizedFields'
 
 // Tables
@@ -50,6 +51,7 @@ export const schemaTypes = [
   localeString,
   blockContent,
   localeSimpleEditor,
+  localeCustomTable,
   simpleEditor,
   localeBlockContent,
   localeText,

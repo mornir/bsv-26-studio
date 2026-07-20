@@ -62,6 +62,20 @@ export const localeText = defineType({
   ),
 })
 
+export const localeCustomTable = defineType({
+  title: 'Localized custom table',
+  name: 'localeCustomTable',
+  type: 'object',
+  fields: supportedLanguages.map((lang) =>
+    defineField({
+      title: lang.title,
+      name: lang.id,
+      type: 'richTable',
+      validation: (Rule) => (lang.id === 'de' ? Rule.required() : []),
+    }),
+  ),
+})
+
 export const localeImage = defineType({
   title: 'Localized Image',
   name: 'localeImage',

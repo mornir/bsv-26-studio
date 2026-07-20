@@ -29,7 +29,7 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     {
-      name: 'type',
+      name: 'source',
       type: 'string',
       title: 'Tabellentyp',
       options: {
@@ -49,11 +49,11 @@ export default defineType({
       options: {
         list: predefinedTables,
       },
-      hidden: ({ parent }) => parent?.type !== 'predefined',
+      hidden: ({ parent }) => parent?.source !== 'predefined',
       validation: (Rule) =>
         Rule.custom((value, context) => {
           // @ts-expect-error
-          if (context.parent?.type === 'predefined' && !value) {
+          if (context.parent?.source === 'predefined' && !value) {
             return 'Table ID is required'
           }
           return true
@@ -63,12 +63,12 @@ export default defineType({
       name: 'customTable',
       title: 'Custom Table',
       type: 'localeCustomTable',
-      hidden: ({ parent }) => parent?.type !== 'custom',
+      hidden: ({ parent }) => parent?.source !== 'custom',
       validation: (Rule) =>
         Rule.custom((value, context) => {
           // @ts-expect-error
-          if (context.parent?.type === 'custom' && !value) {
-            return 'Feld ist leer'
+          if (context.parent?.source === 'custom' && !value) {
+            return 'Tabelle-Feld ist leer'
           }
           return true
         }),

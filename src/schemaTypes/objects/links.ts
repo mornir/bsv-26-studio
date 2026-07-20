@@ -1,10 +1,10 @@
 import { defineField, defineType } from 'sanity'
-import { TbSectionSign, TbExternalLink } from 'react-icons/tb'
+import { IconSectionSign, IconExternalLink } from '@tabler/icons-react'
 
 export const internalLink = defineType({
   name: 'internalLink',
   type: 'object',
-  icon: TbSectionSign,
+  icon: IconSectionSign,
   fields: [
     defineField({
       name: 'reference',
@@ -25,7 +25,7 @@ export const internalLink = defineType({
 export const externalLink = defineType({
   name: 'externalLink',
   type: 'object',
-  icon: TbExternalLink,
+  icon: IconExternalLink,
   fields: [
     defineField({
       title: 'URL',

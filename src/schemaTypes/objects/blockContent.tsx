@@ -1,11 +1,11 @@
 import { defineField, defineType, defineArrayMember } from 'sanity'
 import {
-  TbTable,
-  TbMath,
-  TbPhoto,
-  TbSuperscript,
-  TbSubscript,
-} from 'react-icons/tb'
+  IconTable,
+  IconMath,
+  IconPhoto,
+  IconSuperscript,
+  IconSubscript,
+} from '@tabler/icons-react'
 
 export default defineType({
   title: 'Block Content',
@@ -27,7 +27,7 @@ export default defineType({
             { type: 'fireReactionTable' },
             { type: 'measureTarget' },
           ],
-          icon: TbTable,
+          icon: IconTable,
           options: {
             // Only show tables referencing the current article
             filter: ({ document }) => {
@@ -60,13 +60,13 @@ export default defineType({
           {
             title: 'Hochgestellt',
             value: 'sup',
-            icon: TbSuperscript,
+            icon: IconSuperscript,
             component: ({ children }) => <sup>{children}</sup>,
           },
           {
             title: 'Tiefgestellt',
             value: 'sub',
-            icon: TbSubscript,
+            icon: IconSubscript,
             component: ({ children }) => <sub>{children}</sub>,
           },
         ],
@@ -86,12 +86,12 @@ export default defineType({
             type: 'reference',
             name: 'figure',
             to: [{ type: 'figure' }],
-            icon: TbPhoto,
+            icon: IconPhoto,
             title: 'Abbildung',
           }),
         ],
       },
     }),
-    /* defineArrayMember({ type: 'latex', icon: TbMath, title: 'Math block' }), */
+    /* defineArrayMember({ type: 'latex', icon: IconMath, title: 'Math block' }), */
   ],
 })

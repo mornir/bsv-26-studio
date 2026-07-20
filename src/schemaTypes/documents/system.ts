@@ -1,11 +1,11 @@
 import { defineField, defineType } from 'sanity'
-import { TbBuildingCommunity } from 'react-icons/tb'
+import { IconBuildingCommunity } from '@tabler/icons-react'
 
 export default defineType({
   name: 'system',
   title: 'System',
   type: 'document',
-  icon: TbBuildingCommunity,
+  icon: IconBuildingCommunity,
   fields: [
     defineField({
       name: 'name',

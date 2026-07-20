@@ -1,11 +1,11 @@
 import { defineField, defineType } from 'sanity'
-import { TbSquareLetterA } from 'react-icons/tb'
+import { IconSquareLetterA } from '@tabler/icons-react'
 
 export default defineType({
   name: 'section',
   title: 'Abschnitt',
   type: 'document',
-  icon: TbSquareLetterA,
+  icon: IconSquareLetterA,
   fields: [
     defineField({
       title: 'Nummer',

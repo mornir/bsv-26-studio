@@ -1,8 +1,8 @@
 import { singletonDocumentListItem } from 'sanity-plugin-singleton-management'
-import { TbCertificate } from 'react-icons/tb'
+import { IconCertificate } from '@tabler/icons-react'
 import { CONTEXT_SCHEMA_TYPE_NAME } from '@sanity/context/studio'
 
-import { Bot } from 'lucide-react'
+import { IconCpu } from '@tabler/icons-react'
 
 import type { StructureResolver } from 'sanity/structure'
 export const structure: StructureResolver = (S, context) =>
@@ -26,7 +26,7 @@ export const structure: StructureResolver = (S, context) =>
         type: 'qualifications',
         title: 'Kompetenzennachweis',
         id: 'qualifications',
-        icon: TbCertificate,
+        icon: IconCertificate,
       }),
       S.divider(),
       S.documentTypeListItem('usersGroup').title('Nutzergruppen'),
@@ -36,5 +36,5 @@ export const structure: StructureResolver = (S, context) =>
       S.documentTypeListItem('chapter').title('Kapitel'),
       S.documentTypeListItem('section').title('Abschnitte'),
       S.divider(),
-      S.documentTypeListItem(CONTEXT_SCHEMA_TYPE_NAME).icon(Bot),
+      S.documentTypeListItem(CONTEXT_SCHEMA_TYPE_NAME).icon(IconCpu),
     ])

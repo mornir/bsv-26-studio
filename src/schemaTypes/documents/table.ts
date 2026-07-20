@@ -1,5 +1,5 @@
 import { defineField, defineType } from 'sanity'
-import { TbTable } from 'react-icons/tb'
+import { IconTable } from '@tabler/icons-react'
 
 const predefinedTables = [
   { title: 'Nutzergruppen-Gefährdung', value: 'users_risk' },
@@ -11,7 +11,7 @@ export default defineType({
   name: 'table',
   title: 'Tabelle',
   type: 'document',
-  icon: TbTable,
+  icon: IconTable,
   fields: [
     defineField({
       name: 'article',

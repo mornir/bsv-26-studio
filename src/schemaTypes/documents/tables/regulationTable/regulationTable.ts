@@ -1,11 +1,11 @@
 import { defineField, defineType } from 'sanity'
-import { TbHomeCheck } from 'react-icons/tb'
+import { IconHomeCheck } from '@tabler/icons-react'
 
 export default defineType({
   name: 'regulationTable',
   title: 'Anforderungstabelle',
   type: 'document',
-  icon: TbHomeCheck,
+  icon: IconHomeCheck,
   fields: [
     defineField({
       name: 'article',

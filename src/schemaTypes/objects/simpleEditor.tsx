@@ -1,6 +1,6 @@
 import { defineType, defineArrayMember } from 'sanity'
 
-import { TbSuperscript, TbSubscript } from 'react-icons/tb'
+import { IconSuperscript, IconSubscript } from '@tabler/icons-react'
 
 export default defineType({
   title: 'Block Content',
@@ -20,13 +20,13 @@ export default defineType({
           {
             title: 'Hochgestellt',
             value: 'sup',
-            icon: TbSuperscript,
+            icon: IconSuperscript,
             component: ({ children }) => <sup>{children}</sup>,
           },
           {
             title: 'Tiefgestellt',
             value: 'sub',
-            icon: TbSubscript,
+            icon: IconSubscript,
             component: ({ children }) => <sub>{children}</sub>,
           },
         ],

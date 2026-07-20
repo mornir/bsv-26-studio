@@ -1,11 +1,11 @@
 import { defineField, defineType } from 'sanity'
-import { TbMessageQuestion } from 'react-icons/tb'
+import { IconMessageQuestion } from '@tabler/icons-react'
 
 export default defineType({
   name: 'faq',
   title: 'Anfrage',
   type: 'document',
-  icon: TbMessageQuestion,
+  icon: IconMessageQuestion,
   fields: [
     defineField({
       name: 'name',

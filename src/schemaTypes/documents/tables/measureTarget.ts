@@ -1,12 +1,11 @@
 import { defineType, defineField } from 'sanity'
-
-import { ShieldQuestionMark } from 'lucide-react'
+import { IconUserShield } from '@tabler/icons-react'
 
 export default defineType({
   name: 'measureTarget',
   title: 'Schutzgüter nach Massnahmen',
   type: 'document',
-  icon: ShieldQuestionMark,
+  icon: IconUserShield,
   fields: [
     defineField({
       name: 'article',

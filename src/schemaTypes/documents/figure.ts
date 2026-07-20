@@ -1,11 +1,11 @@
 import { defineField, defineType } from 'sanity'
-import { TbPhoto } from 'react-icons/tb'
+import { IconPhoto } from '@tabler/icons-react'
 
 export default defineType({
   name: 'figure',
   title: 'Abbildung',
   type: 'document',
-  icon: TbPhoto,
+  icon: IconPhoto,
   fields: [
     defineField({
       title: 'Nummer',

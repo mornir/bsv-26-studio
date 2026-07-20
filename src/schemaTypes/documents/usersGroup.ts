@@ -1,5 +1,5 @@
 import { defineType, defineField } from 'sanity'
-import { TbUsersGroup } from 'react-icons/tb'
+import { IconUsersGroup } from '@tabler/icons-react'
 
 const speed = [
   { title: 'schnell', value: 'fast' },
@@ -29,7 +29,7 @@ export default defineType({
   name: 'usersGroup',
   title: 'Nutzergruppen',
   type: 'document',
-  icon: TbUsersGroup,
+  icon: IconUsersGroup,
   fields: [
     defineField({
       name: 'designation',

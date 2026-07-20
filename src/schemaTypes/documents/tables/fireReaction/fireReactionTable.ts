@@ -1,5 +1,5 @@
 import { defineField, defineType } from 'sanity'
-import { BrickWallFire } from 'lucide-react'
+import { IconFirewallFlame } from '@tabler/icons-react'
 
 const fireProtectionConcepts = [
   { title: 'Grundkonzept', value: 'basic-concept' },
@@ -14,7 +14,7 @@ export default defineType({
   name: 'fireReactionTable',
   title: 'Brandverhalten',
   type: 'document',
-  icon: BrickWallFire,
+  icon: IconFirewallFlame,
   fields: [
     defineField({
       name: 'article',

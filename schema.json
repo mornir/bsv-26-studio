@@ -1660,7 +1660,7 @@
         },
         "optional": false
       },
-      "type": {
+      "source": {
         "type": "objectAttribute",
         "value": {
           "type": "union",

@@ -19,29 +19,29 @@
   "dependencies": {
     "@portabletext/toolkit": "^5.0.2",
     "@sanity/context": "^0.7.1",
-    "@sanity/dashboard": "^6.0.3",
-    "@sanity/language-filter": "^5.0.4",
-    "@sanity/locale-de-de": "^1.1.32",
-    "@sanity/vision": "^6.1.0",
+    "@sanity/dashboard": "^6.0.14",
+    "@sanity/language-filter": "^5.0.13",
+    "@sanity/locale-de-de": "^1.1.33",
+    "@sanity/vision": "^6.6.0",
     "@tabler/icons-react": "^3.45.0",
-    "react": "^19.2.7",
-    "react-dom": "^19.2.7",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
     "sanity": "^6.6.0",
-    "sanity-plugin-dashboard-widget-netlify": "^3.0.3",
-    "sanity-plugin-latex-input": "^3.0.1",
+    "sanity-plugin-dashboard-widget-netlify": "^3.0.14",
+    "sanity-plugin-latex-input": "^3.0.7",
     "sanity-plugin-rich-table": "^2.2.3",
     "sanity-plugin-singleton-management": "^1.0.7",
     "sanity-plugin-webhooks-trigger": "^0.9.0",
-    "styled-components": "^6.4.2"
+    "styled-components": "^6.4.4"
   },
   "devDependencies": {
-    "@sanity/cli": "^7.2.3",
+    "@sanity/cli": "^7.13.0",
     "@sanity/eslint-config-studio": "^6.0.0",
-    "@types/node": "^26.0.0",
+    "@types/node": "^26.1.1",
     "@types/react": "^19.2.17",
-    "eslint": "10.5.0",
-    "prettier": "^3.8.4",
-    "typescript": "^6.0.3"
+    "eslint": "10.8.0",
+    "prettier": "^3.9.6",
+    "typescript": "^7.0.2"
   },
   "prettier": {
     "semi": false,

@@ -26,7 +26,7 @@
     "@tabler/icons-react": "^3.45.0",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
-    "sanity": "^6.3.0",
+    "sanity": "^6.6.0",
     "sanity-plugin-dashboard-widget-netlify": "^3.0.3",
     "sanity-plugin-latex-input": "^3.0.1",
     "sanity-plugin-rich-table": "^2.2.3",

@@ -6,7 +6,7 @@ import section from './documents/section'
 import figure from './documents/figure'
 import faq from './documents/faq'
 import appendix from './documents/appendix'
-import table from './documents/table'
+import customTable from './documents/customTable'
 import system from './documents/system'
 import usersGroup from './documents/usersGroup'
 import regulationTable from './documents/tables/regulationTable/regulationTable'
@@ -24,6 +24,8 @@ import {
   localeImage,
   localeCustomTable,
 } from './objects/localizedFields'
+
+import predefinedTable from './documents/tables/predefinedTable'
 
 // Tables
 import { protectedAssets } from './documents/tables/common'
@@ -44,7 +46,7 @@ export const schemaTypes = [
   regulationRow,
   fireReactionRow,
   faq,
-  table,
+  customTable,
   figure,
   measureTarget,
   appendix,
@@ -61,4 +63,5 @@ export const schemaTypes = [
   section,
   qualifications,
   fireReactionTable,
+  predefinedTable,
 ]

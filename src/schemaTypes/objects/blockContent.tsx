@@ -22,7 +22,7 @@ export default defineType({
           title: 'Tabellen',
           type: 'reference',
           to: [
-            { type: 'table' },
+            { type: 'customTable' },
             { type: 'regulationTable' },
             { type: 'fireReactionTable' },
             { type: 'measureTarget' },
@@ -39,6 +39,9 @@ export default defineType({
               }
             },
           },
+        }),
+        defineArrayMember({
+          type: 'predefinedTable',
         }),
       ],
       // Styles let you set what your user can mark up blocks with. These

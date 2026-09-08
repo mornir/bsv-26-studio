@@ -19,7 +19,7 @@ export const structure: StructureResolver = (S, context) =>
       S.documentTypeListItem('measureTarget').title(
         'Schutzgüter nach Massnahmen',
       ),
-      S.documentTypeListItem('table').title('Andere Tabellen'),
+      S.documentTypeListItem('customTable').title('Andere Tabellen'),
       singletonDocumentListItem({
         S,
         context,

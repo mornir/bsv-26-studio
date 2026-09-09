@@ -1,8 +1,5 @@
 import { singletonDocumentListItem } from 'sanity-plugin-singleton-management'
 import { IconCertificate } from '@tabler/icons-react'
-import { CONTEXT_SCHEMA_TYPE_NAME } from '@sanity/context/studio'
-
-import { IconCpu } from '@tabler/icons-react'
 
 import type { StructureResolver } from 'sanity/structure'
 export const structure: StructureResolver = (S, context) =>
@@ -35,6 +32,4 @@ export const structure: StructureResolver = (S, context) =>
       S.documentTypeListItem('title').title('Titel'),
       S.documentTypeListItem('chapter').title('Kapitel'),
       S.documentTypeListItem('section').title('Abschnitte'),
-      S.divider(),
-      S.documentTypeListItem(CONTEXT_SCHEMA_TYPE_NAME).icon(IconCpu),
     ])

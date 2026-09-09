@@ -13,7 +13,6 @@ import { structure } from './structure'
 import { languageFilter } from '@sanity/language-filter'
 import { latexInput } from 'sanity-plugin-latex-input'
 import { singletonTools } from 'sanity-plugin-singleton-management'
-import { contextPlugin } from '@sanity/context/studio'
 import { webhooksTrigger } from 'sanity-plugin-webhooks-trigger'
 import { richTablePlugin } from 'sanity-plugin-rich-table'
 
@@ -77,7 +76,6 @@ export default defineConfig({
         'fireReactionTable',
       ],
     }),
-    contextPlugin(),
     webhooksTrigger({
       title: 'HTML-Website',
       text: 'Klicke auf den grünen Button, um html.bsvonline.ch zu aktualisieren. Nach ca. 3 Minuten ist die Website neu aufgebaut. 😃',

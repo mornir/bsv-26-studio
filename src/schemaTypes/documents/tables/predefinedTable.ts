@@ -18,6 +18,12 @@ export default defineType({
   icon: IconTableSpark,
   fields: [
     defineField({
+      name: 'name',
+      title: 'Name',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'tableId',
       title: 'ID von der Tabelle',
       type: 'string',
@@ -27,18 +33,4 @@ export default defineType({
       },
     }),
   ],
-  preview: {
-    select: {
-      name: 'tableId',
-    },
-    prepare({ name }) {
-      const matchedTable = predefinedTables.find(
-        (table) => table.value === name,
-      )
-
-      return {
-        title: matchedTable?.title ?? name ?? 'Unbekannte Tabelle',
-      }
-    },
-  },
 })

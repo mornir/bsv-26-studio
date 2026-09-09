@@ -17,6 +17,8 @@ export default defineCliConfig({
     dataset,
   },
   deployment: { autoUpdates: false, appId },
+  reactStrictMode: true,
+  reactCompiler: { target: '19', transform: 'oxc' },
   typegen: {
     path: '../bsv-26-web/src/sanity/queries.ts', // glob pattern to your typescript files. Can also be an array of paths
     schema: 'schema.json', // path to your schema file, generated with 'sanity schema extract' command

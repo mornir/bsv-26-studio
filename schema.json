@@ -662,7 +662,7 @@
           "value": {
             "type": "string"
           },
-          "optional": false
+          "optional": true
         },
         "fr": {
           "type": "objectAttribute",
@@ -2931,11 +2931,11 @@
         },
         "optional": false
       },
-      "desc": {
+      "description": {
         "type": "objectAttribute",
         "value": {
           "type": "inline",
-          "name": "localeSimpleEditor"
+          "name": "localeText"
         },
         "optional": true
       }

@@ -41,9 +41,9 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'desc',
+      name: 'description',
       title: 'Beschreibung',
-      type: 'localeSimpleEditor',
+      type: 'localeText',
     }),
   ],
   preview: {

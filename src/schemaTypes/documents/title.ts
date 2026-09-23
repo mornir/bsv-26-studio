@@ -45,6 +45,16 @@ export default defineType({
       title: 'Beschreibung',
       type: 'localeText',
     }),
+    defineField({
+      name: 'color',
+      title: 'Farbe',
+      type: 'color',
+      fieldset: 'number',
+      validation: (Rule) => Rule.required(),
+      options: {
+        disableAlpha: true,
+      },
+    }),
   ],
   preview: {
     select: {

@@ -15,6 +15,7 @@ import { latexInput } from 'sanity-plugin-latex-input'
 import { singletonTools } from 'sanity-plugin-singleton-management'
 import { webhooksTrigger } from 'sanity-plugin-webhooks-trigger'
 import { richTablePlugin } from 'sanity-plugin-rich-table'
+import { colorInput } from '@sanity/color-input'
 
 // Environment variables for project configuration
 const projectId = process.env.SANITY_STUDIO_PROJECT_ID || 'your-projectID'
@@ -60,6 +61,7 @@ export default defineConfig({
     deDELocale(),
     visionTool(),
     latexInput(),
+    colorInput(),
     singletonTools(),
     languageFilter({
       supportedLanguages: [

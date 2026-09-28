@@ -91,13 +91,13 @@ export default defineConfig({
   },
   auth: {
     providers: (defaultProviders) => [
-      ...defaultProviders,
       {
         name: 'saml',
         title: 'VKG SAML Login',
         url: `https://api.sanity.io/v2021-10-01/auth/saml/login/${auth_endpoint}`,
         logo: 'https://www.vkg.ch/favicon/favicon-32x32.png',
       },
+      ...defaultProviders,
     ],
   },
 })
